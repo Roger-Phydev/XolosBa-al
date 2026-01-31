@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ch2aaogqda5on"]
+
+[ext_resource type="Material" uid="uid://ccv0a7p18f0y0" path="res://Assets/Material/Piso/piso.tres" id="1_nvnu3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_agfsv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wjf51"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Floor" type="Node3D" unique_id=1373648623]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=2053722570]
+transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 46.923058, -0.1836319, -0.001789093, -0.18211365)
+mesh = SubResource("PlaneMesh_agfsv")
+surface_material_override/0 = ExtResource("1_nvnu3")
+
+[node name="Floor" type="StaticBody3D" parent="Floor" unique_id=109488522]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Floor" unique_id=762770286]
+shape = SubResource("ConcavePolygonShape3D_wjf51")
