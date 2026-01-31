@@ -28,6 +28,7 @@ physics_material_override = SubResource("PhysicsMaterial_d4g21")
 
 [node name="FormaColisionPiso" type="CollisionShape3D" parent="ColisionPiso" unique_id=585860851]
 shape = SubResource("CylinderShape3D_d4g21")
+disabled = true
 
 [node name="Trigger" type="Area3D" parent="ColisionPiso" unique_id=629329695]
 

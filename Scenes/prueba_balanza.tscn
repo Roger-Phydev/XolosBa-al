@@ -1,18 +1,26 @@
 [gd_scene format=3 uid="uid://c1nf5njkx6qno"]
 
+[ext_resource type="Script" uid="uid://doqtbvuli6mek" path="res://scripts/main_scene.gd" id="1_f2sy5"]
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="1_pt505"]
 [ext_resource type="PackedScene" uid="uid://c0s577uppos3f" path="res://Scenes/balanza.tscn" id="2_ltfu4"]
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="3_ltfu4"]
+[ext_resource type="PackedScene" uid="uid://b603p1ldmpqsu" path="res://Scenes/estatua.tscn" id="5_ht6f4"]
+[ext_resource type="PackedScene" uid="uid://bp4qy30p0e65i" path="res://Scenes/objeto_con_peso.tscn" id="6_hdbn8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_f2sy5"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ht6f4"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hdbn8"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_y5xym"]
+
 [node name="PruebaBalanza" type="Node3D" unique_id=1484090471]
+script = ExtResource("1_f2sy5")
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1755451491]
-transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 46.923058, 0, 0, 0)
 mesh = SubResource("PlaneMesh_f2sy5")
 
 [node name="Floor" type="StaticBody3D" parent="Floor" unique_id=22356363]
@@ -21,10 +29,33 @@ mesh = SubResource("PlaneMesh_f2sy5")
 shape = SubResource("ConcavePolygonShape3D_ht6f4")
 
 [node name="Man" parent="." unique_id=362380532 instance=ExtResource("1_pt505")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.753342, 7.2376556, 13.910622)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.753342, 3.2376556, 13.910622)
 
 [node name="Balanza" parent="." unique_id=1300322833 instance=ExtResource("2_ltfu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.977, 0, 0)
+peso_izquierda = 5.0
 
 [node name="Dog" parent="." unique_id=948133787 instance=ExtResource("3_ltfu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9288278, 1.5367932, 13.281027)
+
+[node name="Estatua Pesada" parent="." unique_id=1717322581 instance=ExtResource("5_ht6f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56107044, 23.402363)
+
+[node name="ObjetoConPeso" parent="Estatua Pesada" unique_id=610131462 instance=ExtResource("6_hdbn8")]
+peso = 6.0
+
+[node name="Estatua Ligera" parent="." unique_id=219759773 instance=ExtResource("5_ht6f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.743868, 0.56107044, 21.362045)
+
+[node name="ObjetoConPeso" parent="Estatua Ligera" unique_id=2119503310 instance=ExtResource("6_hdbn8")]
+peso = 4.0
+
+[node name="PiedraInmovil" type="StaticBody3D" parent="." unique_id=1870043795]
+transform = Transform3D(1.43, 0, 0, 0, 1.43, 0, 0, 0, 1.43, 12.759526, 0.77150583, 12.556285)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PiedraInmovil" unique_id=210695844]
+shape = SubResource("BoxShape3D_hdbn8")
+debug_color = Color(0.7762526, 0.18608156, 0.9630286, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PiedraInmovil" unique_id=670586013]
+mesh = SubResource("PrismMesh_y5xym")
