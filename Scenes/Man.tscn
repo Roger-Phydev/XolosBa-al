@@ -11,10 +11,12 @@
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=362380532]
 script = ExtResource("1_jwmbh")
 
-[node name="Body" type="MeshInstance3D" parent="." unique_id=1536789568]
+[node name="model" type="Node3D" parent="." unique_id=855088303]
+
+[node name="Body" type="MeshInstance3D" parent="model" unique_id=1536789568]
 mesh = SubResource("CapsuleMesh_d4mno")
 
-[node name="Eyes" type="MeshInstance3D" parent="." unique_id=1511223390]
+[node name="Eyes" type="MeshInstance3D" parent="model" unique_id=1511223390]
 transform = Transform3D(-9.524888e-09, -4.835197e-16, -0.65480703, -1.9049777e-08, 0.12653042, 0, -0.21790405, -1.1061641e-08, 2.8622525e-08, 0, 0.649, -0.481)
 mesh = SubResource("BoxMesh_jwmbh")
 

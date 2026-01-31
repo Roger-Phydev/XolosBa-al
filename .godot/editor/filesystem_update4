@@ -3,3 +3,5 @@ res://scripts/man.gd
 res://Scenes/main_scene.tscn
 res://Scenes/Dog.tscn
 res://scripts/dog.gd
+res://scripts/game_master.gd
+res://scripts/main_scene.gd
