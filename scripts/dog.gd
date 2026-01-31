@@ -9,17 +9,25 @@ var mouse_v_sensitivity = 0.05;
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED; #mousecaptured
 
+
 func _physics_process(delta: float) -> void:
 	# escape mouse_captured
+	
 	if Input.is_action_just_pressed("Cancel"):
+		print(deg_to_rad($CameraArm.rotation.x));
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
 		elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 	
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -40,4 +48,4 @@ func _input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			rotate_y(deg_to_rad(-event.relative.x * mouse_h_sensitivity)); #rotates the horizontal axis
 			$CameraArm.rotate_x(deg_to_rad(-event.relative.y * mouse_v_sensitivity)); #rotates the vertical axis
-			$CameraArm.rotation.x = clamp($CameraArm.rotation.x,deg_to_rad(-20),deg_to_rad(30)); #clamps the rotation
+			$CameraArm.rotation.x = clamp($CameraArm.rotation.x,deg_to_rad(-30),deg_to_rad(0)); #clamps the rotation

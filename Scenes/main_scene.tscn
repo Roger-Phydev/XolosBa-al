@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cntt8xr5m18j8"]
 
-[ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="1_52fb6"]
+[ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="1_52fb6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2ia5b"]
 
@@ -18,8 +18,8 @@ mesh = SubResource("PlaneMesh_2ia5b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=355086765]
 shape = SubResource("ConcavePolygonShape3D_2ia5b")
 
-[node name="CharacterBody3D" parent="." unique_id=362380532 instance=ExtResource("1_52fb6")]
-transform = Transform3D(-4.371139e-08, 0, -1.0000001, 0, 1.0000001, 0, 1, 0, -4.3711392e-08, -0.33835557, 1.0000001, 0.10870219)
-
 [node name="Light" type="DirectionalLight3D" parent="." unique_id=1252177641]
 transform = Transform3D(0.020489542, 0.9284017, -0.37101325, -0.051193837, 0.3715785, 0.9269891, 0.99847865, 5.5663185e-09, 0.055141926, 0, 12.447894, 0)
+
+[node name="Dog" parent="." unique_id=948133787 instance=ExtResource("1_52fb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8297043, 0.50000006, 0.010574341)

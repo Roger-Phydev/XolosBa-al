@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ct5ijybxw4cmk"]
+
+[ext_resource type="Script" uid="uid://dm3sfi3wo7l4l" path="res://scripts/dog.gd" id="1_kyxs0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ea2dd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ea2dd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyxs0"]
+size = Vector3(2.2025146, 1.2172852, 1)
+
+[node name="Dog" type="CharacterBody3D" unique_id=948133787]
+script = ExtResource("1_kyxs0")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1106568334]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_ea2dd")
+
+[node name="vision" type="MeshInstance3D" parent="." unique_id=313042174]
+transform = Transform3D(-4.371139e-08, 0, 0.53833824, 0, 0.13294089, 0, -1, 0, -2.3531513e-08, -4.4381224e-08, 0, -1.015324)
+mesh = SubResource("CylinderMesh_ea2dd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=759999069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12042236, -0.10864258, 0)
+shape = SubResource("BoxShape3D_kyxs0")
+
+[node name="CameraArm" type="Node3D" parent="." unique_id=400888801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888, -1.0331948)
+
+[node name="Camera3D" type="Camera3D" parent="CameraArm" unique_id=1734740642]
+transform = Transform3D(1, 0, 0, 0, 0.898794, 0.43837112, 0, -0.43837112, 0.898794, 0, 0.23343848, 2.5350966)
