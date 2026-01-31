@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://rkix4re78aov"]
+
+[ext_resource type="Texture2D" uid="uid://jc0fpjusocwk" path="res://Assets/Modelos/Paredes/stone-bricks-beige-wall-set/source/wallSET_1.png" id="1_tbaro"]
+
+[resource]
+albedo_texture = ExtResource("1_tbaro")
