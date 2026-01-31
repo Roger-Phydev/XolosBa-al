@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://gnkwvhs6ns3e"]
+
+[ext_resource type="Texture2D" uid="uid://ikbnenfmcpg6" path="res://Assets/Modelos/Objetos/wooden-torch-3d-model/textures/WoodenTorch.png" id="1_522vq"]
+
+[resource]
+albedo_texture = ExtResource("1_522vq")
