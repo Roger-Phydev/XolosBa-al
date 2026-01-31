@@ -52,9 +52,16 @@ puntaBrazo = NodePath("../../Brazos/Brazo 1/Fin Brazo 1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6763067, 0, 12.573451)
 puntaBrazo = NodePath("../../Brazos/Brazo 2/Fin Brazo 2")
 
-[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaIzquierda" to="." method="_on_plataforma_balanza_1_agregar_peso"]
+[node name="LuzExito" type="OmniLight3D" parent="." unique_id=1300599589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8637028, 1.5940456)
+visible = false
+light_color = Color(0.6035, 0.71, 0, 1)
+light_energy = 2.901
+light_size = 0.168
+
 [connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaIzquierda" to="." method="_on_plataforma_balanza_izquierda_agregar_peso"]
+[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaIzquierda" to="." method="_on_plataforma_balanza_1_agregar_peso"]
 [connection signal="quitar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaIzquierda" to="." method="_on_plataforma_balanza_izquierda_quitar_peso"]
-[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaDerecha" to="." method="_on_plataforma_balanza_2_agregar_peso"]
 [connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaDerecha" to="." method="_on_plataforma_balanza_derecha_agregar_peso"]
+[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaDerecha" to="." method="_on_plataforma_balanza_2_agregar_peso"]
 [connection signal="quitar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaDerecha" to="." method="_on_plataforma_balanza_derecha_quitar_peso"]

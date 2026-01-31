@@ -40,12 +40,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9288278, 1.5367932, 13.2810
 
 [node name="Estatua Pesada" parent="." unique_id=1717322581 instance=ExtResource("5_ht6f4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56107044, 23.402363)
+color = Color(0, 1, 0.16666651, 1)
 
 [node name="ObjetoConPeso" parent="Estatua Pesada" unique_id=610131462 instance=ExtResource("6_hdbn8")]
 peso = 6.0
 
 [node name="Estatua Ligera" parent="." unique_id=219759773 instance=ExtResource("5_ht6f4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.743868, 0.56107044, 21.362045)
+color = Color(0, 0.83333325, 1, 1)
 
 [node name="ObjetoConPeso" parent="Estatua Ligera" unique_id=2119503310 instance=ExtResource("6_hdbn8")]
 peso = 4.0
