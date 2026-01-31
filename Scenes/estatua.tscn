@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b603p1ldmpqsu"]
+
+[ext_resource type="Script" uid="uid://dnhfdu7tdcaep" path="res://scripts/estatua.gd" id="1_x13u8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bkqeo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x13u8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4lk8g"]
+
+[node name="Estatua" type="CharacterBody3D" unique_id=1717322581]
+script = ExtResource("1_x13u8")
+
+[node name="model" type="Node3D" parent="." unique_id=945235814]
+
+[node name="Cuerpo" type="MeshInstance3D" parent="model" unique_id=196543236]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bkqeo")
+
+[node name="Cabeza" type="MeshInstance3D" parent="model" unique_id=1945127765]
+transform = Transform3D(0.5, 0, 0, 0, 0.125, 0, 0, 0, 0.5, 0, 0.6199205, 0)
+mesh = SubResource("CylinderMesh_x13u8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=959354609]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_4lk8g")
