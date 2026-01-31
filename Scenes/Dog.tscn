@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ct5ijybxw4cmk"]
 
 [ext_resource type="Script" uid="uid://dm3sfi3wo7l4l" path="res://scripts/dog.gd" id="1_kyxs0"]
+[ext_resource type="PackedScene" uid="uid://bp4qy30p0e65i" path="res://Scenes/objeto_con_peso.tscn" id="2_0ixus"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ea2dd"]
 
@@ -61,3 +62,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 60
 text = "Pausa"
+
+[node name="ObjetoConPeso" parent="." unique_id=610131462 instance=ExtResource("2_0ixus")]
+peso = 7.0

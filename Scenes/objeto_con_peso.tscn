@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bp4qy30p0e65i"]
+
+[ext_resource type="Script" uid="uid://pjl11n73tpmn" path="res://scripts/objeto_con_peso.gd" id="1_rpfpw"]
+
+[node name="ObjetoConPeso" type="Node3D" unique_id=610131462]
+script = ExtResource("1_rpfpw")
