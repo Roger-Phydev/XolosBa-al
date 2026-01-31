@@ -9,6 +9,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_kyxs0"]
 size = Vector3(2.2025146, 1.2172852, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyxs0"]
+bg_color = Color(0, 0, 0, 0.65882355)
+
 [node name="Dog" type="CharacterBody3D" unique_id=948133787]
 process_mode = 3
 script = ExtResource("1_kyxs0")
@@ -34,19 +37,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888, -1.0331948)
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.898794, 0.43837112, 0, -0.43837112, 0.898794, 0, 0.23343848, 2.5350966)
 
-[node name="PauseMenu" type="Control" parent="CameraArm/Camera3D" unique_id=2009584013]
-visible = false
+[node name="UI" type="Control" parent="CameraArm/Camera3D" unique_id=2009584013]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 652.0
 
-[node name="Panel" type="Panel" parent="CameraArm/Camera3D/PauseMenu" unique_id=381463446]
+[node name="DogLayer" type="Panel" parent="CameraArm/Camera3D/UI" unique_id=580789961]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kyxs0")
+
+[node name="Pause" type="Panel" parent="CameraArm/Camera3D/UI" unique_id=381463446]
+visible = false
 layout_mode = 0
 offset_right = 1157.0
 offset_bottom = 650.0
 
-[node name="Label" type="Label" parent="CameraArm/Camera3D/PauseMenu/Panel" unique_id=361335812]
+[node name="Label" type="Label" parent="CameraArm/Camera3D/UI/Pause" unique_id=361335812]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

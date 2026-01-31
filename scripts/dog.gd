@@ -37,8 +37,19 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED);
 			velocity.z = move_toward(velocity.z, 0, SPEED);
+		if Input.is_action_just_pressed("Pause"): #pause mode
+			toogle_mouse_mode(); #toogles mouse mode
+			get_tree().paused = not get_tree().paused; #toogles paused of the menu
+			$CameraArm/Camera3D/PauseMenu.visible = not $CameraArm/Camera3D/PauseMenu.visible; #toogles visibility of the menu
 
 	move_and_slide()
+
+#toogle mouse_mode
+func toogle_mouse_mode():
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
+	elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 
 #mouse rotations:
 func _input(event: InputEvent) -> void:

@@ -28,10 +28,10 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED);
 			velocity.z = move_toward(velocity.z, 0, SPEED);
-		if Input.is_action_just_pressed("Pause"):
-			toogle_mouse_mode();
-			get_tree().paused = not get_tree().paused;
-			$CameraArm/Camera3D/PauseMenu.visible = not $CameraArm/Camera3D/PauseMenu.visible;
+		if Input.is_action_just_pressed("Pause"): #pause mode
+			toogle_mouse_mode(); #toogles mouse mode
+			get_tree().paused = not get_tree().paused; #toogles paused of the menu
+			$CameraArm/Camera3D/PauseMenu.visible = not $CameraArm/Camera3D/PauseMenu.visible; #toogles visibility of the menu
 
 	move_and_slide()
 

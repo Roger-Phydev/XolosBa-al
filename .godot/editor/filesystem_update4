@@ -1,7 +1,6 @@
+res://Scenes/main_scene.tscn
+res://scripts/dog.gd
 res://Scenes/Man.tscn
 res://scripts/man.gd
-res://Scenes/main_scene.tscn
+res://Scenes/room_a.tscn
 res://Scenes/Dog.tscn
-res://scripts/dog.gd
-res://scripts/game_master.gd
-res://scripts/main_scene.gd

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="1_52fb6"]
 [ext_resource type="Script" uid="uid://doqtbvuli6mek" path="res://scripts/main_scene.gd" id="1_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="2_6l7je"]
+[ext_resource type="PackedScene" uid="uid://ck0mcyloxhuov" path="res://Assets/Modelos/Test_1.glb" id="4_x6ack"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2ia5b"]
 
@@ -29,3 +30,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207037, 1.3710678, -0.6663
 
 [node name="Dog" parent="." unique_id=948133787 instance=ExtResource("1_52fb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8297043, 0.50000006, 0.010574341)
+
+[node name="Test_1" parent="." unique_id=1048273985 instance=ExtResource("4_x6ack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119607925, 0, -5.498364)
