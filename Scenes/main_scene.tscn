@@ -16,11 +16,16 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6ev3c"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_iacmt"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_maf8m"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
 [node name="MainScene" type="Node3D" unique_id=416884618]
 script = ExtResource("1_jv6wh")
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1419066539]
-transform = Transform3D(48.769253, 0, 0, 0, 2.2077885, 0, 0, 0, 18.394356, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("PlaneMesh_2ia5b")
 
 [node name="Floor" type="StaticBody3D" parent="Floor" unique_id=2110725430]
@@ -86,3 +91,21 @@ script = ExtResource("5_iacmt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzlePiece4/MeshInstance3D/PuzzlePieceLuna" unique_id=525386020]
 shape = SubResource("ConcavePolygonShape3D_6ev3c")
+
+[node name="Ceiling" type="MeshInstance3D" parent="." unique_id=780920619]
+transform = Transform3D(-50, 2.6226832e-07, 0, -4.371139e-06, -3, 0, 0, 0, 20, 0, 7, 0)
+mesh = SubResource("PlaneMesh_iacmt")
+
+[node name="Ceiling" type="StaticBody3D" parent="Ceiling" unique_id=853965869]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/Ceiling" unique_id=957491633]
+shape = SubResource("ConcavePolygonShape3D_maf8m")
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=261391451]
+transform = Transform3D(-2.1855694e-06, 3, -8.742278e-07, 0, -1.3113416e-07, -20, -50, -1.3113416e-07, 3.821371e-14, -48.8198, 7, 0)
+mesh = SubResource("PlaneMesh_iacmt")
+
+[node name="Ceiling" type="StaticBody3D" parent="Wall" unique_id=1418776929]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/Ceiling" unique_id=2107882900]
+shape = SubResource("ConcavePolygonShape3D_maf8m")

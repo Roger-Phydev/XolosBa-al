@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://qref5qdiam68"]
+
+[ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="1_leg0r"]
+[ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="2_gjogy"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a1ejr"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1ff4m"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_leg0r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmv0u"]
+
+[node name="RoomB" type="Node3D" unique_id=2124949100]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1369396132]
+transform = Transform3D(48.769253, 0, 0, 0, 2.2077885, 0, 0, 0, 18.394356, 0, 0, 0)
+mesh = SubResource("PlaneMesh_a1ejr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1965247322]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=568526483]
+shape = SubResource("ConcavePolygonShape3D_1ff4m")
+
+[node name="Light" type="DirectionalLight3D" parent="." unique_id=1642710750]
+transform = Transform3D(0.020489542, 0.9284017, -0.37101325, -0.051193837, 0.3715785, 0.9269891, 0.99847865, 5.5663185e-09, 0.055141926, 0, 12.447894, 0)
+
+[node name="Man" parent="." unique_id=362380532 instance=ExtResource("1_leg0r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.207037, 1.3710678, -0.66637707)
+
+[node name="Dog" parent="." unique_id=948133787 instance=ExtResource("2_gjogy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8297043, 0.50000006, 0.010574341)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=761036471]
+mesh = SubResource("PrismMesh_leg0r")
+surface_material_override/0 = SubResource("ShaderMaterial_xmv0u")
