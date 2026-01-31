@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3ow3uatsrd7x"
+path="res://.godot/imported/ACOR97.10G103.obj-0ecaf077fe2c0cc7978164a4d41ac140.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ACOR97.10G103.obj-0ecaf077fe2c0cc7978164a4d41ac140.mesh"]
+
+source_file="res://Assets/Modelos/Clutter/Rocas/acor-9710g103-basalt/source/ACOR97.10G103.obj"
+dest_files=["res://.godot/imported/ACOR97.10G103.obj-0ecaf077fe2c0cc7978164a4d41ac140.mesh", "res://.godot/imported/ACOR97.10G103.obj-0ecaf077fe2c0cc7978164a4d41ac140.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(50, 50, 50)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

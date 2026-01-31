@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccv0a7p18f0y0"]
+
+[ext_resource type="Texture2D" uid="uid://bkkk7ujb4dwtq" path="res://Assets/Modelos/Pisos/floor/floor_material_0.png" id="1_754pv"]
+
+[resource]
+albedo_texture = ExtResource("1_754pv")
+uv1_scale = Vector3(13.91, 13.91, 13.91)

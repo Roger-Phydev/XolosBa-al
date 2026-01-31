@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckxd0ucadvjgs"]
+
+[ext_resource type="Texture2D" uid="uid://b5s7tpntri0aw" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Textures/Rock3_Diffuse.png" id="1_gl5td"]
+
+[resource]
+albedo_texture = ExtResource("1_gl5td")

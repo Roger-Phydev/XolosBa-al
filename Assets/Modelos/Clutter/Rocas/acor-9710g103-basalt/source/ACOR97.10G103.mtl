@@ -1,0 +1,13 @@
+#
+# Wavefront material file
+# Created in RealityScan
+# Engine version v2.1.0.119011
+#
+
+newmtl ACOR97.10G103_u1_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd ACOR97.10G103_u1_v1_diffuse.png
