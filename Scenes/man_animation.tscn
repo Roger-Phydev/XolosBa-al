@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://h6jt267mcxj3"]
+
+[ext_resource type="PackedScene" uid="uid://ck0mcyloxhuov" path="res://Assets/Modelos/Test_1.glb" id="1_4ycpv"]
+
+[node name="ManAnimation" unique_id=149051093 instance=ExtResource("1_4ycpv")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1372120719) index="0" unique_id=1036980681]
+bones/0/position = Vector3(0, 6.2734156, 0)
+bones/3/rotation = Quaternion(3.7257124e-08, 3.4898765e-08, -0.5118213, 0.859092)
+bones/6/rotation = Quaternion(3.817642e-08, -3.4920248e-08, 0.5326303, 0.84634805)
+bones/10/position = Vector3(-7.450587e-09, 6.273416, -4.2632564e-14)
+bones/10/rotation = Quaternion(0.6129072, 0.3526257, 0.6129071, -0.35262564)
+bones/11/rotation = Quaternion(-0.48716667, 5.8277518e-08, 1.426107e-07, 0.873309)
+bones/13/position = Vector3(7.450587e-09, 6.273416, -4.2632564e-14)
+bones/13/rotation = Quaternion(0.6129072, -0.3526257, -0.6129071, -0.35262564)
+bones/14/rotation = Quaternion(-0.48716667, -5.8277518e-08, -1.426107e-07, 0.873309)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=56409517]
+autoplay = &"Idle"

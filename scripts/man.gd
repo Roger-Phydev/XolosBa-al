@@ -5,9 +5,15 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var mouse_h_sensitivity = 0.05;
 var mouse_v_sensitivity = 0.05;
+var animationPlayer : AnimationPlayer = null;
+
+# Estados de animacion
+var is_moving = false;
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED; #mousecaptured
+	animationPlayer = get_node("ManAnimation/AnimationPlayer")
+	print({ animationPlayer: animationPlayer})
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,9 +31,11 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * SPEED;
 			velocity.z = direction.z * SPEED;
+			start_walking();
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED);
 			velocity.z = move_toward(velocity.z, 0, SPEED);
+			stop_walking();
 		if Input.is_action_just_pressed("Pause"): #pause mode
 			toogle_mouse_mode(); #toogles mouse mode
 			get_tree().paused = not get_tree().paused; #toogles paused of the menu
@@ -65,3 +73,14 @@ func _on_area_3d_body_entered(body: Node3D) -> void: #object getting into man's 
 		body.dissapear(); #dissapears the piece
 		await get_tree().create_timer(0.6).timeout;
 		$CameraArm/Camera3D/UI/Labels/ObjectInfo.visible = false;
+
+# animations
+func start_walking():
+	if (!is_moving):
+		animationPlayer.play("Run1");
+		is_moving = true;
+	
+func stop_walking():
+	if (is_moving):
+		animationPlayer.play("Idle");
+		is_moving = false;

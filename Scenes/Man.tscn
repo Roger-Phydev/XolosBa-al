@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7lwn7e5dqwuc"]
 
 [ext_resource type="Script" uid="uid://co7haixr012hg" path="res://scripts/man.gd" id="1_jwmbh"]
+[ext_resource type="PackedScene" uid="uid://h6jt267mcxj3" path="res://Scenes/man_animation.tscn" id="2_gqo7k"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d4mno"]
 
@@ -20,7 +21,11 @@ size = Vector3(2.0844727, 2.2989502, 1.6113892)
 process_mode = 3
 script = ExtResource("1_jwmbh")
 
+[node name="ManAnimation" parent="." unique_id=149051093 instance=ExtResource("2_gqo7k")]
+transform = Transform3D(-0.34, 0, 2.9723743e-08, 0, 0.34, 0, -2.9723743e-08, 0, -0.34, 0, -2.161909, 0)
+
 [node name="model" type="Node3D" parent="." unique_id=855088303]
+visible = false
 
 [node name="Body" type="MeshInstance3D" parent="model" unique_id=1536789568]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -99,6 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9999871, 0, 0, 0, 0.9999871, 0, -0.5936826
 shape = SubResource("BoxShape3D_jwmbh")
 
 [node name="Torch" type="Node3D" parent="." unique_id=113549661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7553512, 0.5581703, 0)
 
 [node name="stick" type="MeshInstance3D" parent="Torch" unique_id=2130046880]
 transform = Transform3D(0.2, 0, 0, 0, 0.6, 0, 0, 0, 0.2, 1.2267053, 0.7574529, -0.82481927)
