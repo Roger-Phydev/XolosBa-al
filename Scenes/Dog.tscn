@@ -9,9 +9,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_kyxs0"]
 size = Vector3(2.2025146, 1.2172852, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyxs0"]
-bg_color = Color(0, 0, 0, 0.65882355)
-
 [node name="Dog" type="CharacterBody3D" unique_id=948133787]
 process_mode = 3
 script = ExtResource("1_kyxs0")
@@ -19,15 +16,15 @@ script = ExtResource("1_kyxs0")
 [node name="Node3D" type="Node3D" parent="." unique_id=1912174674]
 
 [node name="Body" type="MeshInstance3D" parent="Node3D" unique_id=1106568334]
-transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(3.821371e-15, -8.742278e-08, 2, -2, -8.742278e-08, 0, 8.742278e-08, -2, -8.742278e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_ea2dd")
 
 [node name="vision" type="MeshInstance3D" parent="Node3D" unique_id=313042174]
-transform = Transform3D(-4.371139e-08, 0, 0.53833824, 0, 0.13294089, 0, -1, 0, -2.3531513e-08, -4.4381224e-08, 0, -1.015324)
+transform = Transform3D(-8.742278e-08, 0, 1.076, 0, 0.266, 0, -2, 0, -4.7033453e-08, -6.3215026e-08, 0, -1.4461912)
 mesh = SubResource("CylinderMesh_ea2dd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=759999069]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12042236, -0.10864258, 0)
+transform = Transform3D(1, 0, 0, 0, 1.5973126, 0, 0, 0, 3.8465075, -0.12042236, -0.10864258, 0)
 shape = SubResource("BoxShape3D_kyxs0")
 
 [node name="CameraArm" type="Node3D" parent="." unique_id=400888801]
@@ -35,22 +32,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888, -1.0331948)
 
 [node name="Camera3D" type="Camera3D" parent="CameraArm" unique_id=1734740642]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.898794, 0.43837112, 0, -0.43837112, 0.898794, 0, 0.23343848, 2.5350966)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.79824585, 3.6390917)
 
 [node name="UI" type="Control" parent="CameraArm/Camera3D" unique_id=2009584013]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 652.0
 
-[node name="DogLayer" type="Panel" parent="CameraArm/Camera3D/UI" unique_id=580789961]
-layout_mode = 0
-offset_right = 1157.0
-offset_bottom = 650.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_kyxs0")
-
 [node name="Pause" type="Panel" parent="CameraArm/Camera3D/UI" unique_id=381463446]
-visible = false
 layout_mode = 0
 offset_right = 1157.0
 offset_bottom = 650.0

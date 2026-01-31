@@ -4,3 +4,6 @@ res://Scenes/Man.tscn
 res://scripts/man.gd
 res://Scenes/room_a.tscn
 res://Scenes/Dog.tscn
+res://scripts/main_scene.gd
+res://Scenes/puzzle_piece.tscn
+res://scripts/puzzle_piece.gd

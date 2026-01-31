@@ -15,6 +15,6 @@ func toogle_active_char():
 	GameMaster.man_active = not GameMaster.man_active; #toogles state of this variable
 	# then changes the state of active camera whether man is active or not
 	if GameMaster.man_active:
-		$Man.get_children()[2].get_children()[0].current = true;
+		$Man.get_child(2).get_child(0).current = true;
 	else:
-		$Dog.get_children()[2].get_children()[0].current = true;
+		$Dog.get_child(2).get_child(0).current = true;

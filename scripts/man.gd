@@ -32,8 +32,14 @@ func _physics_process(delta: float) -> void:
 			toogle_mouse_mode(); #toogles mouse mode
 			get_tree().paused = not get_tree().paused; #toogles paused of the menu
 			$CameraArm/Camera3D/PauseMenu.visible = not $CameraArm/Camera3D/PauseMenu.visible; #toogles visibility of the menu
+		if Input.is_action_just_pressed("Torch"):
+			toogle_torch();
 
 	move_and_slide()
+
+#toogle torch status
+func toogle_torch():
+	$Torch/OmniLight3D.visible = not $Torch/OmniLight3D.visible;
 
 #toogle mouse_mode
 func toogle_mouse_mode():
@@ -48,4 +54,14 @@ func _input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: #if the mouse is captured
 			rotate_y(deg_to_rad(-event.relative.x * mouse_h_sensitivity)); #rotates the horizontal axis
 			$CameraArm.rotate_x(deg_to_rad(-event.relative.y * mouse_v_sensitivity)); #rotates the vertical axis
-			$CameraArm.rotation.x = clamp($CameraArm.rotation.x,deg_to_rad(-20),deg_to_rad(30)); #clamps the rotation
+			$CameraArm.rotation.x = clamp($CameraArm.rotation.x,deg_to_rad(-20),deg_to_rad(40)); #clamps the rotation
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void: #object getting into man's reach
+	if "PuzzlePiece" in body.get_name(): #checks if it's not the man as self, the floor or the dog
+		var name = body.get_name().replace("PuzzlePiece","");
+		$CameraArm/Camera3D/UI/Labels/ObjectInfo.visible = true; #visibles the respective label
+		$CameraArm/Camera3D/UI/Labels/ObjectInfo.text = "Pieza de rompecabezas ("+name+") recogida"; #and prints this message
+		body.dissapear(); #dissapears the piece
+		await get_tree().create_timer(0.6).timeout;
+		$CameraArm/Camera3D/UI/Labels/ObjectInfo.visible = false;

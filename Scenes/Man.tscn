@@ -8,6 +8,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d4mno"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwmbh"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwmbh"]
+size = Vector3(2.0844727, 2.2989502, 1.6113892)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jwmbh"]
+
 [node name="Man" type="CharacterBody3D" unique_id=362380532]
 process_mode = 3
 script = ExtResource("1_jwmbh")
@@ -15,45 +23,97 @@ script = ExtResource("1_jwmbh")
 [node name="model" type="Node3D" parent="." unique_id=855088303]
 
 [node name="Body" type="MeshInstance3D" parent="model" unique_id=1536789568]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_d4mno")
 
 [node name="Eyes" type="MeshInstance3D" parent="model" unique_id=1511223390]
-transform = Transform3D(-9.524888e-09, -4.835197e-16, -0.65480703, -1.9049777e-08, 0.12653042, 0, -0.21790405, -1.1061641e-08, 2.8622525e-08, 0, 0.649, -0.481)
+transform = Transform3D(-1.7484556e-08, -1.5312546e-15, -1.2, -6.039832e-08, 0.232, 3.8806835e-22, -0.4, -3.5031025e-08, 5.2453668e-08, -2.3585256e-08, 1.1576641, -1.0205678)
 mesh = SubResource("BoxMesh_jwmbh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2080046150]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_d4mno")
 
 [node name="CameraArm" type="Node3D" parent="." unique_id=1087814236]
 
 [node name="Camera3D" type="Camera3D" parent="CameraArm" unique_id=1625851629]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.9381551, 0.3462153, 0, -0.3462153, 0.9381551, 0, 1.3399873, 1.2515225)
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 2.3538647, 3.680455)
 
-[node name="PauseMenu" type="Control" parent="CameraArm/Camera3D" unique_id=261661461]
-visible = false
+[node name="UI" type="Control" parent="CameraArm/Camera3D" unique_id=261661461]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1153.0
 offset_bottom = 652.0
 
-[node name="Panel" type="Panel" parent="CameraArm/Camera3D/PauseMenu" unique_id=1580192785]
+[node name="Pause" type="Panel" parent="CameraArm/Camera3D/UI" unique_id=1580192785]
+visible = false
 layout_mode = 0
 offset_right = 1157.0
 offset_bottom = 650.0
 
-[node name="Label" type="Label" parent="CameraArm/Camera3D/PauseMenu/Panel" unique_id=796705412]
+[node name="Label" type="Label" parent="CameraArm/Camera3D/UI/Pause" unique_id=796705412]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -11.5
-offset_right = 23.5
-offset_bottom = 11.5
+offset_left = -87.0
+offset_top = -41.5
+offset_right = 87.0
+offset_bottom = 41.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 60
 text = "Pausa"
+
+[node name="Labels" type="Panel" parent="CameraArm/Camera3D/UI" unique_id=2030226236]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwmbh")
+
+[node name="ObjectInfo" type="Label" parent="CameraArm/Camera3D/UI/Labels" unique_id=1689386905]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -11.5
+offset_right = 52.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Tomar objeto"
+
+[node name="Area3D" type="Area3D" parent="CameraArm/Camera3D" unique_id=1855654259]
+transform = Transform3D(1, 0, 0, 0, 0.9063077, -0.42261824, 0, 0.42261824, 0.9063077, 0, -1.031709, -3.3572106)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraArm/Camera3D/Area3D" unique_id=758955783]
+transform = Transform3D(1, 0, 0, 0, 0.9999871, 0, 0, 0, 0.9999871, 0, -0.5936826, -2.9237838)
+shape = SubResource("BoxShape3D_jwmbh")
+
+[node name="Torch" type="Node3D" parent="." unique_id=113549661]
+
+[node name="stick" type="MeshInstance3D" parent="Torch" unique_id=2130046880]
+transform = Transform3D(0.2, 0, 0, 0, 0.6, 0, 0, 0, 0.2, 1.2267053, 0.7574529, -0.82481927)
+mesh = SubResource("CylinderMesh_jwmbh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torch" unique_id=231567914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2143544, 1.6034755, -0.8472519)
+light_color = Color(0.9999997, 0.7320383, 0.6503666, 1)
+light_energy = 3.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_size = 50.0
+light_specular = 0.0
+omni_range = 100.0
+omni_attenuation = 2.0
+
+[connection signal="body_entered" from="CameraArm/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="CameraArm/Camera3D/Area3D" to="." method="_on_area_3d_body_exited"]
