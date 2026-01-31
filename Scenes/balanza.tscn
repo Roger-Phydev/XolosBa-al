@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c0s577uppos3f"]
+
+[ext_resource type="PackedScene" uid="uid://0t52nxc7lt2j" path="res://Scenes/plataforma_balanza.tscn" id="1_4bs3r"]
+[ext_resource type="Script" uid="uid://3qmln1a3cooi" path="res://scripts/balanza.gd" id="1_yituh"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_er0v7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4bs3r"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yituh"]
+
+[node name="Balanza" type="Node3D" unique_id=1300322833]
+script = ExtResource("1_yituh")
+
+[node name="ModelosEstaticos" type="Node3D" parent="." unique_id=53294596]
+transform = Transform3D(4.925, 0, 0, 0, 4.925, 0, 0, 0, 4.925, 0, 0, 0)
+
+[node name="Base" type="MeshInstance3D" parent="ModelosEstaticos" unique_id=2066505101]
+transform = Transform3D(1.8848602, 0, 0, 0, 0.010142341, 0, 0, 0, 1.6897049, 0, 0, 0)
+mesh = SubResource("CylinderMesh_er0v7")
+
+[node name="Columna" type="MeshInstance3D" parent="ModelosEstaticos" unique_id=1679116740]
+transform = Transform3D(0.09575844, 0, 0, 0, 1.0754567, 0, 0, 0, 0.09575844, 0, 1.1083273, 0)
+mesh = SubResource("CylinderMesh_4bs3r")
+
+[node name="ModelosDinamicos" type="Node3D" parent="." unique_id=1366299955]
+
+[node name="Brazos" type="Node3D" parent="ModelosDinamicos" unique_id=74486783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.549877, 0)
+
+[node name="Brazo 1" type="MeshInstance3D" parent="ModelosDinamicos/Brazos" unique_id=1578410830]
+transform = Transform3D(-0.19390959, 3.8394516, 0, -0.24653907, -3.0198312, 0, 0, 0, 0.31065974, 3.9396045, -2.9734774, 0)
+mesh = SubResource("CylinderMesh_yituh")
+
+[node name="Fin Brazo 1" type="Node3D" parent="ModelosDinamicos/Brazos/Brazo 1" unique_id=1084656149]
+transform = Transform3D(1, -9.536743e-07, 0, 0, 1, 0, 0, 0, 1, -7.2730827, 1.42114, 0)
+
+[node name="Brazo 2" type="MeshInstance3D" parent="ModelosDinamicos/Brazos" unique_id=1376836388]
+transform = Transform3D(-0.18795091, -4.3348064, 0, 0.2511112, -3.2445023, 0, 0, 0, 0.31065974, -4.1568584, -3.0962362, 0)
+mesh = SubResource("CylinderMesh_yituh")
+
+[node name="Fin Brazo 2" type="Node3D" parent="ModelosDinamicos/Brazos/Brazo 2" unique_id=1187314787]
+transform = Transform3D(-0.258819, -21.60247, 0, 0.04319009, -0.2588191, 0, 0, 0, 0.99999976, 6.8982315, 1.4517123, 0)
+
+[node name="Plataformas" type="Node3D" parent="ModelosDinamicos" unique_id=258123651]
+
+[node name="PlataformaBalanzaIzquierda" parent="ModelosDinamicos/Plataformas" unique_id=651639595 node_paths=PackedStringArray("puntaBrazo") instance=ExtResource("1_4bs3r")]
+transform = Transform3D(1, 0, 0, 2.9802322e-08, 1, 0, 0, 0, 1, 8.080244, 0, 12.721052)
+puntaBrazo = NodePath("../../Brazos/Brazo 1/Fin Brazo 1")
+
+[node name="PlataformaBalanzaDerecha" parent="ModelosDinamicos/Plataformas" unique_id=119719876 node_paths=PackedStringArray("puntaBrazo") instance=ExtResource("1_4bs3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6763067, 0, 12.573451)
+puntaBrazo = NodePath("../../Brazos/Brazo 2/Fin Brazo 2")
+
+[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaIzquierda" to="." method="_on_plataforma_balanza_1_agregar_peso"]
+[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaIzquierda" to="." method="_on_plataforma_balanza_izquierda_agregar_peso"]
+[connection signal="quitar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaIzquierda" to="." method="_on_plataforma_balanza_izquierda_quitar_peso"]
+[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaDerecha" to="." method="_on_plataforma_balanza_2_agregar_peso"]
+[connection signal="agregar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaDerecha" to="." method="_on_plataforma_balanza_derecha_agregar_peso"]
+[connection signal="quitar_peso" from="ModelosDinamicos/Plataformas/PlataformaBalanzaDerecha" to="." method="_on_plataforma_balanza_derecha_quitar_peso"]
