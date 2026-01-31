@@ -10,13 +10,16 @@
 size = Vector3(2.2025146, 1.2172852, 1)
 
 [node name="Dog" type="CharacterBody3D" unique_id=948133787]
+process_mode = 3
 script = ExtResource("1_kyxs0")
 
-[node name="Body" type="MeshInstance3D" parent="." unique_id=1106568334]
+[node name="Node3D" type="Node3D" parent="." unique_id=1912174674]
+
+[node name="Body" type="MeshInstance3D" parent="Node3D" unique_id=1106568334]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_ea2dd")
 
-[node name="vision" type="MeshInstance3D" parent="." unique_id=313042174]
+[node name="vision" type="MeshInstance3D" parent="Node3D" unique_id=313042174]
 transform = Transform3D(-4.371139e-08, 0, 0.53833824, 0, 0.13294089, 0, -1, 0, -2.3531513e-08, -4.4381224e-08, 0, -1.015324)
 mesh = SubResource("CylinderMesh_ea2dd")
 
@@ -28,4 +31,33 @@ shape = SubResource("BoxShape3D_kyxs0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.888, -1.0331948)
 
 [node name="Camera3D" type="Camera3D" parent="CameraArm" unique_id=1734740642]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.898794, 0.43837112, 0, -0.43837112, 0.898794, 0, 0.23343848, 2.5350966)
+
+[node name="PauseMenu" type="Control" parent="CameraArm/Camera3D" unique_id=2009584013]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 652.0
+
+[node name="Panel" type="Panel" parent="CameraArm/Camera3D/PauseMenu" unique_id=381463446]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="CameraArm/Camera3D/PauseMenu/Panel" unique_id=361335812]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Pausa"

@@ -10,34 +10,42 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED; #mousecaptured
 
 func _physics_process(delta: float) -> void:
-	# escape mouse_captured
-	if Input.is_action_just_pressed("Cancel"):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
-		elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward");
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
-	if direction:
-		velocity.x = direction.x * SPEED;
-		velocity.z = direction.z * SPEED;
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED);
-		velocity.z = move_toward(velocity.z, 0, SPEED);
+	
+	if GameMaster.man_active:
+		# escape mouse_captured
+		if Input.is_action_just_pressed("Cancel") and not get_tree().paused:
+			toogle_mouse_mode();
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward");
+		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
+		if direction:
+			velocity.x = direction.x * SPEED;
+			velocity.z = direction.z * SPEED;
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED);
+			velocity.z = move_toward(velocity.z, 0, SPEED);
+		if Input.is_action_just_pressed("Pause"):
+			toogle_mouse_mode();
+			get_tree().paused = not get_tree().paused;
+			$CameraArm/Camera3D/PauseMenu.visible = not $CameraArm/Camera3D/PauseMenu.visible;
 
 	move_and_slide()
 
+#toogle mouse_mode
+func toogle_mouse_mode():
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
+	elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
+
 #mouse rotations:
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if GameMaster.man_active and event is InputEventMouseMotion:# if its active and mouse moves
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: #if the mouse is captured
 			rotate_y(deg_to_rad(-event.relative.x * mouse_h_sensitivity)); #rotates the horizontal axis
 			$CameraArm.rotate_x(deg_to_rad(-event.relative.y * mouse_v_sensitivity)); #rotates the vertical axis
 			$CameraArm.rotation.x = clamp($CameraArm.rotation.x,deg_to_rad(-20),deg_to_rad(30)); #clamps the rotation
