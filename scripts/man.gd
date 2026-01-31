@@ -16,11 +16,8 @@ func _physics_process(delta: float) -> void:
 	
 	if GameMaster.man_active:
 		# escape mouse_captured
-		if Input.is_action_just_pressed("Cancel"):
-			if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
-			elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
+		if Input.is_action_just_pressed("Cancel") and not get_tree().paused:
+			toogle_mouse_mode();
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward");
@@ -31,8 +28,19 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED);
 			velocity.z = move_toward(velocity.z, 0, SPEED);
+		if Input.is_action_just_pressed("Pause"):
+			toogle_mouse_mode();
+			get_tree().paused = not get_tree().paused;
+			$CameraArm/Camera3D/PauseMenu.visible = not $CameraArm/Camera3D/PauseMenu.visible;
 
 	move_and_slide()
+
+#toogle mouse_mode
+func toogle_mouse_mode():
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE;
+	elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 
 #mouse rotations:
 func _input(event: InputEvent) -> void:
