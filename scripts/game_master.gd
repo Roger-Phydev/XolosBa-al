@@ -1,6 +1,7 @@
 extends Node
 
 var man_active = true; #indicates if the man is active
+var medallones = 0; #cuenta los medallones
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
