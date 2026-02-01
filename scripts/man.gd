@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal start_human_idle();
+signal start_human_run();
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
@@ -10,6 +12,7 @@ var objeto_al_alcance;
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED; #mousecaptured
+	start_human_idle.emit();
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,9 +30,11 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * SPEED;
 			velocity.z = direction.z * SPEED;
+			start_human_run.emit();
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED);
 			velocity.z = move_toward(velocity.z, 0, SPEED);
+			start_human_idle.emit();
 		if Input.is_action_just_pressed("Pause"): #pause mode
 			toogle_mouse_mode(); #toogles mouse mode
 			get_tree().paused = not get_tree().paused; #toogles paused of the menu

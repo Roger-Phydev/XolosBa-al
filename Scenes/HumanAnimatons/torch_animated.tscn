@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dpm43juk1mpk0"]
+
+[ext_resource type="PackedScene" uid="uid://cntq0ewtj00d4" path="res://Assets/Modelos/Hombre/Torch_1FirstTry_1.fbx" id="1_wrl1a"]
+[ext_resource type="Script" uid="uid://colv2nx0xcrb2" path="res://scripts/torch_animated.gd" id="2_fjrvp"]
+
+[node name="TorchAnimated" unique_id=444807638 instance=ExtResource("1_wrl1a")]
+script = ExtResource("2_fjrvp")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1046108871]
+autoplay = &"Cylinder|IdleTorch"
+
+[node name="PosicionAntorchaIdle" type="Marker3D" parent="." index="2" unique_id=450211487]
+transform = Transform3D(0.9999999, 0, 7.1054274e-15, 0, 0.9999999, 0, -7.1054274e-15, 0, 0.9999999, -1.0348186, 3.2585804, 0.88069725)
+
+[node name="PosicionAntorchaRun" type="Marker3D" parent="." index="3" unique_id=1969628256]
+transform = Transform3D(0.9999999, 0, 7.1054274e-15, 0, 0.9999999, 0, -7.1054274e-15, 0, 0.9999999, -0.2799275, 3.2557456, 2.0872874)

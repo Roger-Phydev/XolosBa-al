@@ -3,8 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="1_52fb6"]
 [ext_resource type="Script" uid="uid://doqtbvuli6mek" path="res://scripts/main_scene.gd" id="1_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="2_6l7je"]
-[ext_resource type="PackedScene" uid="uid://ch2aaogqda5on" path="res://Scenes/floor.tscn" id="7_maf8m"]
-[ext_resource type="PackedScene" uid="uid://c58dw1r5cbyax" path="res://Assets/Modelos/Clutter/ParedRota/stone-pack/source/Stonepack.fbx" id="9_76v2p"]
+[ext_resource type="PackedScene" path="res://Scenes/floor.tscn" id="7_maf8m"]
 [ext_resource type="PackedScene" uid="uid://doui66mfa568m" path="res://Assets/Modelos/Clutter/Plantas/Lianas/plant_modular_003.fbx" id="9_drdnd"]
 [ext_resource type="PackedScene" uid="uid://cahfxy7o2jj1b" path="res://Assets/Modelos/Paredes/paredes_separadas/ParedAlta.fbx" id="9_mai8y"]
 [ext_resource type="PackedScene" uid="uid://dcc3gloow21fa" path="res://Assets/Modelos/Pisos/stone_foundation/stone_foundation.glb" id="10_drdnd"]
@@ -233,9 +232,6 @@ mesh = ExtResource("13_ioaeq")
 [node name="Acor97_10g109" type="MeshInstance3D" parent="Vegetación" unique_id=1147328948]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 29.748608, 0.20373595, 17.25462)
 mesh = ExtResource("13_ioaeq")
-
-[node name="Stonepack" parent="." unique_id=2046822381 instance=ExtResource("9_76v2p")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -3.1281366, -0.23342466, -1.4985244)
 
 [node name="Sketchfab_Scene" parent="." unique_id=801677321 instance=ExtResource("10_drdnd")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -0.34224534, -1.3009715, 3.8424096)

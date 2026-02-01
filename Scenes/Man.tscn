@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://7lwn7e5dqwuc"]
 
 [ext_resource type="Script" uid="uid://co7haixr012hg" path="res://scripts/man.gd" id="1_jwmbh"]
+[ext_resource type="PackedScene" uid="uid://civx73jyetfo7" path="res://Scenes/HumanAnimatons/human_body_animated.tscn" id="2_4atwd"]
 [ext_resource type="PackedScene" uid="uid://bp4qy30p0e65i" path="res://Scenes/objeto_con_peso.tscn" id="2_gqo7k"]
+[ext_resource type="PackedScene" uid="uid://c63lrwk6dipsg" path="res://Scenes/HumanAnimatons/poncho_animated.tscn" id="3_alnij"]
+[ext_resource type="PackedScene" uid="uid://dpm43juk1mpk0" path="res://Scenes/HumanAnimatons/torch_animated.tscn" id="4_iy5g1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d4mno"]
 
@@ -22,14 +25,23 @@ process_mode = 3
 script = ExtResource("1_jwmbh")
 
 [node name="model" type="Node3D" parent="." unique_id=855088303]
+transform = Transform3D(-0.76, 0, 1.9932392e-07, 0, 0.76, 0, -1.9932392e-07, 0, -0.76, 0, -2.0414598, 0)
 
 [node name="Body" type="MeshInstance3D" parent="model" unique_id=1536789568]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_d4mno")
 
 [node name="Eyes" type="MeshInstance3D" parent="model" unique_id=1511223390]
 transform = Transform3D(-1.7484556e-08, -1.5312546e-15, -1.2, -6.039832e-08, 0.232, 3.8806835e-22, -0.4, -3.5031025e-08, 5.2453668e-08, -2.3585256e-08, 1.1576641, -1.0205678)
+visible = false
 mesh = SubResource("BoxMesh_jwmbh")
+
+[node name="HumanBodyAnimated" parent="model" unique_id=566080288 instance=ExtResource("2_4atwd")]
+
+[node name="PonchoAnimated" parent="model" unique_id=35937515 instance=ExtResource("3_alnij")]
+
+[node name="TorchAnimated" parent="model" unique_id=444807638 instance=ExtResource("4_iy5g1")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2080046150]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -106,6 +118,7 @@ theme_override_font_sizes/font_size = 35
 text = "Tomar objetos (P)"
 
 [node name="Controls Info" type="Label" parent="CameraArm/Camera3D/UI/Labels" unique_id=1941636821]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -130,10 +143,11 @@ shape = SubResource("BoxShape3D_jwmbh")
 
 [node name="stick" type="MeshInstance3D" parent="Torch" unique_id=2130046880]
 transform = Transform3D(0.2, 0, 0, 0, 0.6, 0, 0, 0, 0.2, 1.2267053, 0.7574529, -0.82481927)
+visible = false
 mesh = SubResource("CylinderMesh_jwmbh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Torch" unique_id=231567914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2143544, 1.6034755, -1.451051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27928412, 1.6034755, -1.8946531)
 light_color = Color(0.9999997, 0.7320383, 0.6503666, 1)
 light_energy = 5.535
 light_indirect_energy = 2.0
@@ -146,5 +160,11 @@ omni_attenuation = 2.0
 [node name="ObjetoConPeso" parent="." unique_id=610131462 instance=ExtResource("2_gqo7k")]
 peso = 10.0
 
+[connection signal="start_human_idle" from="." to="model/HumanBodyAnimated" method="_on_man_start_human_idle"]
+[connection signal="start_human_idle" from="." to="model/PonchoAnimated" method="_on_man_start_human_idle"]
+[connection signal="start_human_idle" from="." to="model/TorchAnimated" method="_on_man_start_human_idle"]
+[connection signal="start_human_run" from="." to="model/HumanBodyAnimated" method="_on_man_start_human_run"]
+[connection signal="start_human_run" from="." to="model/PonchoAnimated" method="_on_man_start_human_run"]
+[connection signal="start_human_run" from="." to="model/TorchAnimated" method="_on_man_start_human_run"]
 [connection signal="body_entered" from="CameraArm/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="CameraArm/Camera3D/Area3D" to="." method="_on_area_3d_body_exited"]
