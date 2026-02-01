@@ -42,4 +42,10 @@ mesh = SubResource("BoxMesh_qfdg2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324707, 5.9060974, 0)
 shape = SubResource("BoxShape3D_ayn20")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2004055249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 6, 0)
+light_color = Color(1, 1, 0, 1)
+light_energy = 16.0
+omni_range = 11.0
+
 [connection signal="body_shape_entered" from="Trigger" to="." method="_on_trigger_body_shape_entered"]

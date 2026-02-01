@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://c8o657bpws5jg" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Textures/Rock4_Diffuse.png" id="16_ybxhx"]
 [ext_resource type="Material" uid="uid://l0kwa8f5f37f" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Materials/Rock08.tres" id="17_05mb3"]
 [ext_resource type="PackedScene" uid="uid://c4l2qjf7bwquw" path="res://Scenes/medallon.tscn" id="18_5t3sd"]
+[ext_resource type="PackedScene" uid="uid://bbkwkrrdwsspo" path="res://Scenes/portal_nivel.tscn" id="19_ku3fp"]
+[ext_resource type="PackedScene" uid="uid://cntt8xr5m18j8" path="res://Scenes/main_scene.tscn" id="20_bm2bi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfaiq"]
 size = Vector3(1, 1.2314453, 1.1817017)
@@ -26,6 +28,7 @@ size = Vector3(1, 1.2314453, 1.1817017)
 size = Vector3(1, 1.2646484, 1.3837891)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ni8pd"]
+size = Vector3(1, 1, 1.2598877)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_05mb3"]
 
@@ -165,8 +168,11 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.
 [node name="ParedAlta17" parent="SquareWalls/ParedSurEste" unique_id=157021123 instance=ExtResource("4_5t3sd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.70605, -0.25, 15.389273)
 
+[node name="ParedAlta22" parent="SquareWalls/ParedSurEste" unique_id=1216637702 instance=ExtResource("4_5t3sd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.70605, -0.25, 8.7803135)
+
 [node name="ParedAlta18" parent="SquareWalls/ParedSurEste" unique_id=1975883419 instance=ExtResource("4_5t3sd")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.70605, -0.25, -26.498196)
+transform = Transform3D(-6.052114e-08, 0, 1, 0, 1, 0, -1.3845623, 0, -4.371139e-08, -51.70605, -0.25, -26.498196)
 
 [node name="ParedAlta19" parent="SquareWalls/ParedSurEste" unique_id=1649273435 instance=ExtResource("4_5t3sd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.70605, -0.25, -44.74228)
@@ -196,7 +202,7 @@ transform = Transform3D(5, 0, 0, 0, 15, 0, 0, 0, 40, -52.5, 4.956, 31.183392)
 shape = SubResource("BoxShape3D_ni8pd")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="SquareWalls/StaticBody3D" unique_id=1182167022]
-transform = Transform3D(5, 0, 0, 0, 15, 0, 0, 0, 40, -52.5, 4.956, -37.798)
+transform = Transform3D(5, 0, 0, 0, 15, 0, 0, 0, 40, -52.5, 4.956, -32.600246)
 shape = SubResource("BoxShape3D_ni8pd")
 
 [node name="Vegetación" type="Node3D" parent="." unique_id=1696457184]
@@ -580,6 +586,10 @@ shape = SubResource("CylinderShape3D_05mb3")
 
 [node name="PuzzlePieceRojo2" parent="." unique_id=535817079 instance=ExtResource("13_nvajx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.013031, 0.49821043, -36.595406)
+
+[node name="PortalNivel" parent="." unique_id=1085388353 instance=ExtResource("19_ku3fp")]
+transform = Transform3D(-0.00043634966, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -0.00043634966, -49.492115, 0, -2.6572018)
+destino = ExtResource("20_bm2bi")
 
 [connection signal="body_entered" from="AcertijoRojo/AreaSonido" to="." method="_on_area_sonido_body_entered"]
 [connection signal="body_exited" from="AcertijoRojo/AreaSonido" to="." method="_on_area_sonido_body_exited"]
