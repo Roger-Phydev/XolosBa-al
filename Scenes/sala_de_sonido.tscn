@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="1_ch57g"]
 [ext_resource type="Script" uid="uid://b8f72nthr8148" path="res://scripts/sala_de_sonido.gd" id="1_ybxhx"]
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="2_ybxhx"]
-[ext_resource type="PackedScene" uid="uid://ch2aaogqda5on" path="res://Scenes/floor.tscn" id="3_05mb3"]
+[ext_resource type="PackedScene" path="res://Scenes/floor.tscn" id="3_05mb3"]
 [ext_resource type="PackedScene" uid="uid://cahfxy7o2jj1b" path="res://Assets/Modelos/Paredes/paredes_separadas/ParedAlta.fbx" id="4_5t3sd"]
 [ext_resource type="PackedScene" uid="uid://doui66mfa568m" path="res://Assets/Modelos/Clutter/Plantas/Lianas/plant_modular_003.fbx" id="5_ku3fp"]
 [ext_resource type="PackedScene" uid="uid://b1gqkvi1ln1re" path="res://Assets/Modelos/Clutter/Plantas/Grass/grass.glb" id="6_bm2bi"]
@@ -19,7 +19,6 @@
 [ext_resource type="Material" uid="uid://l0kwa8f5f37f" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Materials/Rock08.tres" id="17_05mb3"]
 [ext_resource type="PackedScene" uid="uid://c4l2qjf7bwquw" path="res://Scenes/medallon.tscn" id="18_5t3sd"]
 [ext_resource type="PackedScene" uid="uid://bbkwkrrdwsspo" path="res://Scenes/portal_nivel.tscn" id="19_ku3fp"]
-[ext_resource type="PackedScene" uid="uid://cntt8xr5m18j8" path="res://Scenes/main_scene.tscn" id="20_bm2bi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfaiq"]
 size = Vector3(1, 1.2314453, 1.1817017)
@@ -589,7 +588,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.013031, 0.49821043, -36.59
 
 [node name="PortalNivel" parent="." unique_id=1085388353 instance=ExtResource("19_ku3fp")]
 transform = Transform3D(-0.00043634966, 0, 0.9999998, 0, 1, 0, -0.9999998, 0, -0.00043634966, -49.492115, 0, -2.6572018)
-destino = ExtResource("20_bm2bi")
+nombre_escena = "main_scene.tscn"
 
 [connection signal="body_entered" from="AcertijoRojo/AreaSonido" to="." method="_on_area_sonido_body_entered"]
 [connection signal="body_exited" from="AcertijoRojo/AreaSonido" to="." method="_on_area_sonido_body_exited"]

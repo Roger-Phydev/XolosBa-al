@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="1_52fb6"]
 [ext_resource type="Script" uid="uid://doqtbvuli6mek" path="res://scripts/main_scene.gd" id="1_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="2_6l7je"]
-[ext_resource type="PackedScene" uid="uid://ch2aaogqda5on" path="res://Scenes/floor.tscn" id="7_maf8m"]
+[ext_resource type="PackedScene" path="res://Scenes/floor.tscn" id="7_maf8m"]
 [ext_resource type="PackedScene" uid="uid://doui66mfa568m" path="res://Assets/Modelos/Clutter/Plantas/Lianas/plant_modular_003.fbx" id="9_drdnd"]
 [ext_resource type="PackedScene" uid="uid://cahfxy7o2jj1b" path="res://Assets/Modelos/Paredes/paredes_separadas/ParedAlta.fbx" id="9_mai8y"]
 [ext_resource type="PackedScene" uid="uid://dcc3gloow21fa" path="res://Assets/Modelos/Pisos/stone_foundation/stone_foundation.glb" id="10_drdnd"]
@@ -331,3 +331,11 @@ mesh = ExtResource("15_gnsmo")
 [node name="Craneo2" type="MeshInstance3D" parent="." unique_id=1772716991]
 transform = Transform3D(0.51423013, -0.15861352, 0.5919537, 0, 0.77274066, 0.20705524, -0.6128356, -0.13309255, 0.49670815, 1.7716403, 3.2052248, -3.3872962)
 mesh = ExtResource("15_gnsmo")
+
+[node name="PortalBalanza" parent="." unique_id=1085388353 instance=ExtResource("14_lhp3t")]
+transform = Transform3D(0.6737867, 0, -0.7389259, 0, 1, 0, 0.7389259, 0, 0.6737867, 44.990932, 0, -39.635464)
+nombre_escena = "prueba_balanza.tscn"
+
+[node name="PortalSonidos" parent="." unique_id=1270003325 instance=ExtResource("14_lhp3t")]
+transform = Transform3D(-0.67378664, 0, 0.73892593, 0, 1, 0, -0.73892593, 0, -0.67378664, -45.616287, 0, 40.629494)
+nombre_escena = "sala_de_sonido.tscn"
