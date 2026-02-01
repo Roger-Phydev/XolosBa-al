@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c76cqwyq3ro02" path="res://Assets/Fuentes/Title.ttf" id="2_fp2oq"]
 [ext_resource type="Texture2D" uid="uid://s5v6v0dknseo" path="res://Assets/Arte/mascara.png" id="2_q2qps"]
 [ext_resource type="FontFile" uid="uid://bs7khba1lwq07" path="res://Assets/Fuentes/MainFont.ttf" id="3_q2qps"]
+[ext_resource type="AudioStream" uid="uid://q3ld15s1jqtc" path="res://Assets/Musica/menu.mp3" id="5_yosvi"]
 
 [sub_resource type="Theme" id="Theme_w31pl"]
 
@@ -153,6 +154,9 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_4obfb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w31pl")
 text = "Salir"
+
+[node name="Menu" type="AudioStreamPlayer" parent="." unique_id=985898199]
+stream = ExtResource("5_yosvi")
 
 [connection signal="button_down" from="Panel/VBoxContainer/Jugar" to="." method="_on_jugar_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_button_down"]
