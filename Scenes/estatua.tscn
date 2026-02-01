@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b603p1ldmpqsu"]
 
 [ext_resource type="Script" uid="uid://dnhfdu7tdcaep" path="res://scripts/estatua.gd" id="1_x13u8"]
+[ext_resource type="PackedScene" uid="uid://cnwlm1xaatqfe" path="res://Assets/Modelos/Objetos/ceramic-sculpture-of-xolo-version-2/source/1923_06_0545_xolo-v2.fbx" id="2_4lk8g"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bkqeo"]
 
@@ -10,17 +11,22 @@
 height = 1.0
 
 [node name="Estatua" type="CharacterBody3D" unique_id=1717322581]
+transform = Transform3D(2.47, 0, 0, 0, 2.47, 0, 0, 0, 2.47, 0, 0, 0)
 script = ExtResource("1_x13u8")
 
 [node name="model" type="Node3D" parent="." unique_id=945235814]
 
 [node name="Cuerpo" type="MeshInstance3D" parent="model" unique_id=196543236]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_bkqeo")
 
 [node name="Cabeza" type="MeshInstance3D" parent="model" unique_id=1945127765]
-transform = Transform3D(0.5, 0, 0, 0, 0.125, 0, 0, 0, 0.5, 0, 0.6199205, 0)
+transform = Transform3D(-2.3789142e-09, 0.24282596, 0, -0.054423213, -1.061426e-08, 0, 0, 0, 0.054423213, -0.004406441, 0.110988796, 0.44618624)
 mesh = SubResource("CylinderMesh_x13u8")
+
+[node name="1923_06_0545_xolo-v2" parent="model" unique_id=845876772 instance=ExtResource("2_4lk8g")]
+transform = Transform3D(2.53, 0, 0, 0, 2.53, 0, 0, 0, 2.53, -0.3654503, -0.31938475, 0.017240942)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=959354609]
 shape = SubResource("CylinderShape3D_4lk8g")

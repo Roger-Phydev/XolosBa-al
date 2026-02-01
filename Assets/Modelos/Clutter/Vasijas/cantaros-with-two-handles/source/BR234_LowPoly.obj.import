@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqgw71ogmvi5q"
+path="res://.godot/imported/BR234_LowPoly.obj-5abf8b070e3c27a09db79dd46d2a5ae6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BR234_LowPoly.obj-5abf8b070e3c27a09db79dd46d2a5ae6.mesh"]
+
+source_file="res://Assets/Modelos/Clutter/Vasijas/cantaros-with-two-handles/source/BR234_LowPoly.obj"
+dest_files=["res://.godot/imported/BR234_LowPoly.obj-5abf8b070e3c27a09db79dd46d2a5ae6.mesh", "res://.godot/imported/BR234_LowPoly.obj-5abf8b070e3c27a09db79dd46d2a5ae6.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(20, 20, 20)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

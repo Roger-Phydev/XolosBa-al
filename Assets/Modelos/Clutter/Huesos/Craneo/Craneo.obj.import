@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kbg3bpow06fb"
+path="res://.godot/imported/Craneo.obj-2aa0497bde991fb9e35dc21daad59fc9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Craneo.obj-2aa0497bde991fb9e35dc21daad59fc9.mesh"]
+
+source_file="res://Assets/Modelos/Clutter/Huesos/Craneo/Craneo.obj"
+dest_files=["res://.godot/imported/Craneo.obj-2aa0497bde991fb9e35dc21daad59fc9.mesh", "res://.godot/imported/Craneo.obj-2aa0497bde991fb9e35dc21daad59fc9.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(0.2, 0.2, 0.2)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

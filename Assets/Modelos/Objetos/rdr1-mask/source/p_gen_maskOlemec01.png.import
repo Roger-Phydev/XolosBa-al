@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qeg6et3a1vd4"
-path.s3tc="res://.godot/imported/p_gen_maskOlemec01.png-5b6124454bb1f62213acba8df0e769b4.s3tc.ctex"
+path.s3tc="res://.godot/imported/p_gen_maskolemec01.png-6ec3f9ef4df07830ce733b462e6d1971.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Modelos/Objetos/rdr1-mask/source/p_gen_maskOlemec01.png"
-dest_files=["res://.godot/imported/p_gen_maskOlemec01.png-5b6124454bb1f62213acba8df0e769b4.s3tc.ctex"]
+source_file="res://Assets/Modelos/Objetos/rdr1-mask/source/p_gen_maskolemec01.png"
+dest_files=["res://.godot/imported/p_gen_maskolemec01.png-6ec3f9ef4df07830ce733b462e6d1971.s3tc.ctex"]
 
 [params]
 

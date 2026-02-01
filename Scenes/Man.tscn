@@ -133,9 +133,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.6, 0, 0, 0, 0.2, 1.2267053, 0.7574529, -
 mesh = SubResource("CylinderMesh_jwmbh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Torch" unique_id=231567914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2143544, 1.6034755, -0.8472519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2143544, 1.6034755, -1.451051)
 light_color = Color(0.9999997, 0.7320383, 0.6503666, 1)
-light_energy = 3.0
+light_energy = 5.535
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_size = 50.0

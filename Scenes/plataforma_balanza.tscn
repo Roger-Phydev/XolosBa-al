@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0t52nxc7lt2j"]
 
 [ext_resource type="Script" uid="uid://dvhq1jf7g5vhh" path="res://scripts/plataforma_balanza.gd" id="1_5fcxg"]
+[ext_resource type="PackedScene" uid="uid://8mb4tb53hp6s" path="res://Assets/Modelos/Pisos/bloody_aztec_platform/edited_bloody_aztec_platform.glb" id="2_wx8j8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_d4g21"]
 
@@ -21,7 +22,11 @@ script = ExtResource("1_5fcxg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Modelos" unique_id=570113042]
 transform = Transform3D(7.419196, 0, 0, 0, 0.055317223, 0, 0, 0, 7.419196, 0, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_d4g21")
+
+[node name="Sketchfab_Scene" parent="Modelos" unique_id=1493402320 instance=ExtResource("2_wx8j8")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="ColisionPiso" type="AnimatableBody3D" parent="." unique_id=2110765435]
 physics_material_override = SubResource("PhysicsMaterial_d4g21")
