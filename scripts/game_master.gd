@@ -1,11 +1,8 @@
 extends Node
 
 var man_active = true; #indicates if the man is active
-<<<<<<< HEAD
 var current_scene = null
-=======
 var medallones = 0; #cuenta los medallones
->>>>>>> RP/Nivel2Piezas
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
