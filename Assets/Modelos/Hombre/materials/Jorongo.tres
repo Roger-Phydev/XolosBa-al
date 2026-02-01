@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c5lix1tqknl25"]
+
+[ext_resource type="Texture2D" uid="uid://txsx05h2ef53" path="res://Assets/Modelos/Hombre/textures/Jorongo.png" id="1_5d5di"]
+
+[resource]
+albedo_texture = ExtResource("1_5d5di")
