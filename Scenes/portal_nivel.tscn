@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bbkwkrrdwsspo"]
+
+[ext_resource type="PackedScene" uid="uid://djqhwbrh4ys0u" path="res://Assets/Modelos/Paredes/old_stone_arch/old_stone_arch.glb" id="1_ayn20"]
+[ext_resource type="Script" uid="uid://daojp4peim7vd" path="res://scripts/portal_nivel.gd" id="1_e4i8u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayn20"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e4i8u"]
+material = SubResource("StandardMaterial3D_ayn20")
+size = Vector3(14, 9.445, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4i8u"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qfdg2"]
+material = SubResource("StandardMaterial3D_e4i8u")
+size = Vector3(9.805, 3.35, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ayn20"]
+size = Vector3(13.168945, 10.643127, 1)
+
+[node name="PortalNivel" type="Node3D" unique_id=1085388353]
+script = ExtResource("1_e4i8u")
+
+[node name="Modelos" type="Node3D" parent="." unique_id=152466160]
+
+[node name="Sketchfab_Scene" parent="Modelos" unique_id=1475330384 instance=ExtResource("1_ayn20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2903512, 0, -0.8458427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Modelos" unique_id=1359490831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3628705, 4.2646513, -0.9179959)
+mesh = SubResource("BoxMesh_e4i8u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Modelos" unique_id=332449027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3628705, 10.062935, -0.9179959)
+mesh = SubResource("BoxMesh_qfdg2")
+
+[node name="Trigger" type="Area3D" parent="." unique_id=1148390208]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=1006420440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.324707, 5.9060974, 0)
+shape = SubResource("BoxShape3D_ayn20")
+
+[connection signal="body_shape_entered" from="Trigger" to="." method="_on_trigger_body_shape_entered"]

@@ -20,7 +20,7 @@ size = Vector3(2.0844727, 2.2989502, 1.6113892)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_jwmbh"]
 
-[node name="Man" type="CharacterBody3D" unique_id=362380532]
+[node name="Man" type="CharacterBody3D" unique_id=362380532 groups=["Players"]]
 process_mode = 3
 script = ExtResource("1_jwmbh")
 
@@ -43,7 +43,7 @@ mesh = SubResource("BoxMesh_jwmbh")
 
 [node name="TorchAnimated" parent="model" unique_id=444807638 instance=ExtResource("4_iy5g1")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2080046150]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2080046150 groups=["Players"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_d4mno")
 

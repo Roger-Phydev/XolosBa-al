@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://b1gqkvi1ln1re" path="res://Assets/Modelos/Clutter/Plantas/Grass/grass.glb" id="24_ag5qq"]
 [ext_resource type="ArrayMesh" uid="uid://bqgw71ogmvi5q" path="res://Assets/Modelos/Clutter/Vasijas/cantaros-with-two-handles/source/BR234_LowPoly.obj" id="24_c3sfg"]
 [ext_resource type="ArrayMesh" uid="uid://kbg3bpow06fb" path="res://Assets/Modelos/Clutter/Huesos/Craneo/Craneo.obj" id="25_c3sfg"]
+[ext_resource type="PackedScene" uid="uid://bbkwkrrdwsspo" path="res://Scenes/portal_nivel.tscn" id="26_ksets"]
+[ext_resource type="PackedScene" uid="uid://cntt8xr5m18j8" path="res://Scenes/main_scene.tscn" id="27_espgj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hdbn8"]
 size = Vector3(1.46, 2.075, 1.16)
@@ -286,3 +288,7 @@ color = Color(0, 1, 0, 1)
 
 [node name="ObjetoConPeso" parent="Estatuas/Estatua Ligera2" unique_id=968634487 instance=ExtResource("6_hdbn8")]
 peso = 2.0
+
+[node name="PortalNivel" parent="." unique_id=1085388353 instance=ExtResource("26_ksets")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -47.283726, 0, 32.49698)
+destino = ExtResource("27_espgj")

@@ -9,12 +9,12 @@
 [sub_resource type="CylinderMesh" id="CylinderMesh_ea2dd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kyxs0"]
-size = Vector3(2.2025146, 1.2172852, 1)
+size = Vector3(2.203, 1.547, 4.3062696)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xtfja"]
 shader = ExtResource("2_xtfja")
 
-[node name="Dog" type="CharacterBody3D" unique_id=948133787]
+[node name="Dog" type="CharacterBody3D" unique_id=948133787 groups=["Players"]]
 process_mode = 3
 script = ExtResource("1_kyxs0")
 
@@ -28,8 +28,8 @@ mesh = SubResource("CapsuleMesh_ea2dd")
 transform = Transform3D(-8.742278e-08, 0, 1.076, 0, 0.266, 0, -2, 0, -4.7033453e-08, -6.3215026e-08, 0, -1.4461912)
 mesh = SubResource("CylinderMesh_ea2dd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=759999069]
-transform = Transform3D(1, 0, 0, 0, 1.5973126, 0, 0, 0, 3.8465075, -0.12042236, -0.10864258, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=759999069 groups=["Players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12042236, -0.10864258, -0.21063477)
 shape = SubResource("BoxShape3D_kyxs0")
 
 [node name="CameraArm" type="Node3D" parent="." unique_id=400888801]
