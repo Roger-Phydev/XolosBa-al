@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal start_idle();
+signal start_run();
+signal start_jump();
 
 const SPEED = 5.0;
 const JUMP_VELOCITY = 6;
@@ -28,6 +31,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			start_jump.emit();
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward");
@@ -35,9 +39,13 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * SPEED;
 			velocity.z = direction.z * SPEED;
+			if is_on_floor():
+				start_run.emit();
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED);
 			velocity.z = move_toward(velocity.z, 0, SPEED);
+			if is_on_floor():
+				start_idle.emit();
 		if Input.is_action_just_pressed("Pause"): #pause mode
 			toogle_mouse_mode(); #toogles mouse mode
 			get_tree().paused = not get_tree().paused; #toogles paused of the menu

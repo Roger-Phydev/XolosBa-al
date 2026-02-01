@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dm3sfi3wo7l4l" path="res://scripts/dog.gd" id="1_kyxs0"]
 [ext_resource type="PackedScene" uid="uid://bp4qy30p0e65i" path="res://Scenes/objeto_con_peso.tscn" id="2_0ixus"]
+[ext_resource type="PackedScene" uid="uid://bqeh132h2ks7q" path="res://Scenes/xolo_animated.tscn" id="2_gnjn6"]
 [ext_resource type="Shader" path="res://Scenes/GreyScale.gdshader" id="2_xtfja"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ea2dd"]
@@ -9,7 +10,7 @@
 [sub_resource type="CylinderMesh" id="CylinderMesh_ea2dd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kyxs0"]
-size = Vector3(2.203, 1.547, 4.3062696)
+size = Vector3(1.3688965, 1.547, 2.9808033)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xtfja"]
 shader = ExtResource("2_xtfja")
@@ -22,14 +23,19 @@ script = ExtResource("1_kyxs0")
 
 [node name="Body" type="MeshInstance3D" parent="Node3D" unique_id=1106568334]
 transform = Transform3D(3.821371e-15, -8.742278e-08, 2, -2, -8.742278e-08, 0, 8.742278e-08, -2, -8.742278e-08, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_ea2dd")
 
 [node name="vision" type="MeshInstance3D" parent="Node3D" unique_id=313042174]
 transform = Transform3D(-8.742278e-08, 0, 1.076, 0, 0.266, 0, -2, 0, -4.7033453e-08, -6.3215026e-08, 0, -1.4461912)
+visible = false
 mesh = SubResource("CylinderMesh_ea2dd")
 
+[node name="Xolo_animated" parent="Node3D" unique_id=1869478960 instance=ExtResource("2_gnjn6")]
+transform = Transform3D(-0.548, 0, -8.274569e-08, 0, 0.548, 0, 8.274569e-08, 0, -0.548, 0, -0.8812139, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=759999069 groups=["Players"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12042236, -0.10864258, -0.21063477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03890705, -0.10864258, -0.29295534)
 shape = SubResource("BoxShape3D_kyxs0")
 
 [node name="CameraArm" type="Node3D" parent="." unique_id=400888801]
@@ -80,3 +86,7 @@ grow_vertical = 2
 
 [node name="ObjetoConPeso" parent="." unique_id=610131462 instance=ExtResource("2_0ixus")]
 peso = 7.0
+
+[connection signal="start_idle" from="." to="Node3D/Xolo_animated" method="_on_dog_start_idle"]
+[connection signal="start_jump" from="." to="Node3D/Xolo_animated" method="_on_dog_start_jump"]
+[connection signal="start_run" from="." to="Node3D/Xolo_animated" method="_on_dog_start_run"]

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bqeh132h2ks7q"]
+
+[ext_resource type="PackedScene" uid="uid://d28snirme1g3s" path="res://Assets/Modelos/Xolo/Xolo.fbx" id="1_2o1ih"]
+[ext_resource type="Script" uid="uid://ceicvetwhg5n3" path="res://scripts/xolo_animated.gd" id="2_1pl82"]
+
+[node name="Xolo" unique_id=1869478960 instance=ExtResource("1_2o1ih")]
+script = ExtResource("2_1pl82")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1595828687) index="0" unique_id=1118646654]
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0.7071068, 0, -2.0679515e-25, 0.7071067)
+bones/1/rotation = Quaternion(-0.03101496, -1.1915189e-07, 3.6972705e-09, 0.99951893)
+bones/2/rotation = Quaternion(-0.1444147, 2.3591927e-07, -5.3773908e-15, 0.9895173)
+bones/3/rotation = Quaternion(-0.04465631, -2.3818075e-07, 5.5873825e-15, 0.9990024)
+bones/4/rotation = Quaternion(-0.16530609, 1.1756932e-07, 1.970603e-08, 0.98624235)
+bones/5/rotation = Quaternion(0.480697, 1.0453305e-07, 5.730353e-08, 0.8768868)
+bones/7/rotation = Quaternion(0.50239277, -0.09248251, -0.5082597, 0.6933402)
+bones/8/rotation = Quaternion(0.31082025, -0.016077582, 0.13993941, 0.939973)
+bones/9/rotation = Quaternion(-0.041018255, -1.2005246e-08, 0.03948783, 0.9983778)
+bones/10/rotation = Quaternion(-0.26591977, 4.8469023e-08, 0.429303, 0.8631255)
+bones/12/rotation = Quaternion(0.5023927, 0.09248225, 0.5082598, 0.6933403)
+bones/13/rotation = Quaternion(0.31082028, 0.016077586, -0.13993944, 0.939973)
+bones/14/rotation = Quaternion(-0.0410183, 6.0185165e-08, -0.03948784, 0.9983778)
+bones/15/rotation = Quaternion(-0.26591972, -6.987402e-08, -0.42930287, 0.86312556)
+bones/17/position = Vector3(0, 0, 0)
+bones/17/rotation = Quaternion(-0.53149056, 5.7902643e-24, -1.2354709e-16, 0.84706426)
+bones/18/rotation = Quaternion(-0.14984989, 2.8960414e-18, -3.9448786e-17, 0.9887088)
+bones/19/rotation = Quaternion(-0.08079015, 1.8975316e-18, -2.165889e-17, 0.9967312)
+bones/20/rotation = Quaternion(0.13940917, -3.1009773e-18, 3.7202812e-17, 0.99023485)
+bones/21/rotation = Quaternion(0.17067239, 1.1746023e-07, 2.0345732e-08, 0.98532784)
+bones/22/rotation = Quaternion(0.12407212, 2.5173738e-14, 2.9581098e-08, 0.9922732)
+bones/24/position = Vector3(0, 0, 0)
+bones/24/rotation = Quaternion(0.01187429, -0.012840857, -0.81283313, 0.58223397)
+bones/25/rotation = Quaternion(0.10340046, -8.011451e-08, -0.5726412, 0.8132591)
+bones/26/rotation = Quaternion(-0.5208587, 6.037145e-09, -0.08148359, 0.84974504)
+bones/27/rotation = Quaternion(0.66178197, -1.5394235e-08, 0.10352974, 0.74251354)
+bones/28/rotation = Quaternion(0.31073368, 1.6660822e-08, 0.048611417, 0.94925314)
+bones/30/position = Vector3(0, 0, 0)
+bones/30/rotation = Quaternion(0.01187429, 0.012840857, 0.81283313, 0.58223397)
+bones/31/rotation = Quaternion(0.10340046, 8.011451e-08, 0.5726412, 0.8132591)
+bones/32/rotation = Quaternion(-0.5208587, -6.037145e-09, 0.08148359, 0.84974504)
+bones/33/rotation = Quaternion(0.66178197, 1.5394235e-08, -0.10352974, 0.74251354)
+bones/34/rotation = Quaternion(0.31073368, -1.6660822e-08, -0.048611417, 0.94925314)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=104616388]
+autoplay = &"Armature|IdleXolo"

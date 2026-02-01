@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1vebtlqu6gyq"]
+
+[ext_resource type="Texture2D" uid="uid://dxj6mqkn5ej4n" path="res://Assets/Modelos/Xolo/PeroAzul.png" id="1_kgi6c"]
+
+[resource]
+albedo_texture = ExtResource("1_kgi6c")
+metallic = 1.0
