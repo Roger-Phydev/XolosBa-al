@@ -118,6 +118,7 @@ theme_override_font_sizes/font_size = 35
 text = "Tomar objetos (P)"
 
 [node name="Controls Info" type="Label" parent="CameraArm/Camera3D/UI/Labels" unique_id=1941636821]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
