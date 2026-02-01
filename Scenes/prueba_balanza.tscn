@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://doqtbvuli6mek" path="res://scripts/main_scene.gd" id="1_f2sy5"]
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="1_pt505"]
-[ext_resource type="PackedScene" path="res://Scenes/balanza.tscn" id="2_ltfu4"]
+[ext_resource type="PackedScene" uid="uid://c0s577uppos3f" path="res://Scenes/balanza.tscn" id="2_ltfu4"]
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="3_ltfu4"]
-[ext_resource type="PackedScene" path="res://Scenes/estatua.tscn" id="5_ht6f4"]
+[ext_resource type="PackedScene" uid="uid://b603p1ldmpqsu" path="res://Scenes/estatua.tscn" id="5_ht6f4"]
 [ext_resource type="PackedScene" uid="uid://bp4qy30p0e65i" path="res://Scenes/objeto_con_peso.tscn" id="6_hdbn8"]
 [ext_resource type="PackedScene" uid="uid://jm5cvs6prsp6" path="res://Assets/Modelos/Paredes/paredes_separadas/Esquina.fbx" id="7_stm3j"]
-[ext_resource type="PackedScene" path="res://Scenes/floor.tscn" id="8_khiiu"]
+[ext_resource type="PackedScene" uid="uid://ch2aaogqda5on" path="res://Scenes/floor.tscn" id="8_khiiu"]
 [ext_resource type="PackedScene" uid="uid://cahfxy7o2jj1b" path="res://Assets/Modelos/Paredes/paredes_separadas/ParedAlta.fbx" id="9_uwxm6"]
 [ext_resource type="PackedScene" uid="uid://doui66mfa568m" path="res://Assets/Modelos/Clutter/Plantas/Lianas/plant_modular_003.fbx" id="12_hupxv"]
 [ext_resource type="ArrayMesh" uid="uid://d3ow3uatsrd7x" path="res://Assets/Modelos/Clutter/Rocas/acor-9710g103-basalt/source/ACOR97.10G103.obj" id="12_pgk1c"]
@@ -25,10 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://b1gqkvi1ln1re" path="res://Assets/Modelos/Clutter/Plantas/Grass/grass.glb" id="24_ag5qq"]
 [ext_resource type="ArrayMesh" uid="uid://bqgw71ogmvi5q" path="res://Assets/Modelos/Clutter/Vasijas/cantaros-with-two-handles/source/BR234_LowPoly.obj" id="24_c3sfg"]
 [ext_resource type="ArrayMesh" uid="uid://kbg3bpow06fb" path="res://Assets/Modelos/Clutter/Huesos/Craneo/Craneo.obj" id="25_c3sfg"]
-[ext_resource type="PackedScene" uid="uid://bbkwkrrdwsspo" path="res://Scenes/portal_nivel.tscn" id="26_ksets"]
+[ext_resource type="PackedScene" path="res://Scenes/portal_nivel.tscn" id="26_ksets"]
 [ext_resource type="Texture2D" uid="uid://c8o657bpws5jg" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Textures/Rock4_Diffuse.png" id="27_espgj"]
-[ext_resource type="Script" uid="uid://cl5ju2xisi1b0" path="res://scripts/premio_balanza.gd" id="27_wn1vb"]
+[ext_resource type="Script" path="res://scripts/premio_balanza.gd" id="27_wn1vb"]
 [ext_resource type="PackedScene" uid="uid://c4l2qjf7bwquw" path="res://Scenes/medallon.tscn" id="28_wn1vb"]
+[ext_resource type="AudioStream" path="res://Assets/Musica/level_1.mp3" id="30_x26fw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hdbn8"]
 size = Vector3(1.46, 2.075, 1.16)
@@ -52,6 +53,9 @@ data = PackedVector3Array(0, 1, 0.5, 0.049, 1, 0.4976, 0, 0.59999996, 0.5, 0.049
 
 [node name="PruebaBalanza" type="Node3D" unique_id=1484090471]
 script = ExtResource("1_f2sy5")
+
+[node name="Nivel" type="AudioStreamPlayer" parent="." unique_id=258645484]
+stream = ExtResource("30_x26fw")
 
 [node name="Man" parent="." unique_id=362380532 instance=ExtResource("1_pt505")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.753342, 3.2376556, 13.910622)
