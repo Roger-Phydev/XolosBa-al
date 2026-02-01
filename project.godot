@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="XolosBa'al"
-run/main_scene="uid://cntt8xr5m18j8"
+run/main_scene="uid://cianr1c8su0ob"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameMaster="*uid://ctyqce6ivukxw"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Lab121-25/Documents/NivelBalanza.ogv"
 
 [global_group]
 

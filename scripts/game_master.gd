@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if medallones >= total_medallones:
-		goto_scene("res://scenes/fin.tscn");
+		goto_scene("res://Scenes/fin.tscn");
 
 #toogle active:
 func toogle_char():
