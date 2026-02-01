@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_jugar_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_scene.tscn"); #lanza la escena principal
+	get_tree().change_scene_to_file("res://Scenes/intro.tscn"); #lanza la escena principal
 
 
 func _on_salir_button_down() -> void:

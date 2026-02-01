@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bqe15iukqj55r"]
+
+[ext_resource type="VideoStream" uid="uid://cuu7vh75ucpup" path="res://Assets/Videos/VideoMuestra.ogv" id="1_b226h"]
+[ext_resource type="Script" uid="uid://dmvq72lhesqkn" path="res://scripts/intro.gd" id="1_duh1u"]
+
+[node name="Intro" type="Node2D" unique_id=2013999362]
+script = ExtResource("1_duh1u")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=55065565]
+offset_left = -287.0
+offset_top = -478.0
+offset_right = 289.0
+offset_bottom = 546.0
+stream = ExtResource("1_b226h")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2006390485]
+zoom = Vector2(0.9, 0.9)
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

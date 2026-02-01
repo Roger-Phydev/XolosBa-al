@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://durnrxo8ealj"]
+[gd_scene format=3 uid="uid://cianr1c8su0ob"]
 
-[ext_resource type="Script" uid="uid://bv8vfepbkq7gv" path="res://scripts/title.gd" id="1_w31pl"]
+[ext_resource type="Script" path="res://scripts/title.gd" id="1_w31pl"]
 [ext_resource type="FontFile" uid="uid://c76cqwyq3ro02" path="res://Assets/Fuentes/Title.ttf" id="2_fp2oq"]
 [ext_resource type="Texture2D" uid="uid://s5v6v0dknseo" path="res://Assets/Arte/mascara.png" id="2_q2qps"]
 [ext_resource type="FontFile" uid="uid://bs7khba1lwq07" path="res://Assets/Fuentes/MainFont.ttf" id="3_q2qps"]
