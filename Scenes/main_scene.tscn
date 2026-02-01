@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="1_52fb6"]
 [ext_resource type="Script" uid="uid://doqtbvuli6mek" path="res://scripts/main_scene.gd" id="1_jv6wh"]
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="2_6l7je"]
-[ext_resource type="Script" uid="uid://c4jt86h6dcoug" path="res://scripts/puzzle_piece.gd" id="5_iacmt"]
 [ext_resource type="PackedScene" uid="uid://ch2aaogqda5on" path="res://Scenes/floor.tscn" id="7_maf8m"]
 [ext_resource type="PackedScene" uid="uid://c58dw1r5cbyax" path="res://Assets/Modelos/Clutter/ParedRota/stone-pack/source/Stonepack.fbx" id="9_76v2p"]
 [ext_resource type="PackedScene" uid="uid://doui66mfa568m" path="res://Assets/Modelos/Clutter/Plantas/Lianas/plant_modular_003.fbx" id="9_drdnd"]
@@ -15,11 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://clpc4y1m5ogo4" path="res://Assets/Modelos/Clutter/Rocas/Rocks/source/Rock3.fbx" id="14_7ewk0"]
 [ext_resource type="ArrayMesh" uid="uid://kbg3bpow06fb" path="res://Assets/Modelos/Clutter/Huesos/Craneo/Craneo.obj" id="15_gnsmo"]
 [ext_resource type="ArrayMesh" uid="uid://bqgw71ogmvi5q" path="res://Assets/Modelos/Clutter/Vasijas/cantaros-with-two-handles/source/BR234_LowPoly.obj" id="15_lhp3t"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_x6ack"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6ev3c"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_huasi"]
 size = Vector3(1, 1.2314453, 1)
@@ -46,58 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.918304, 2.5334618, 27.6467
 
 [node name="Dog" parent="." unique_id=948133787 instance=ExtResource("1_52fb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.216387, 1.6181571, 29.19144)
-
-[node name="PuzzlePiece1" type="Node3D" parent="." unique_id=1960995764]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.234007, 0.5, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzlePiece1" unique_id=1169924285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.630617, 0, 0)
-mesh = SubResource("BoxMesh_x6ack")
-
-[node name="PuzzlePieceLuna" type="StaticBody3D" parent="PuzzlePiece1/MeshInstance3D" unique_id=1273985124]
-script = ExtResource("5_iacmt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzlePiece1/MeshInstance3D/PuzzlePieceLuna" unique_id=436301544]
-shape = SubResource("ConcavePolygonShape3D_6ev3c")
-
-[node name="PuzzlePiece2" type="Node3D" parent="." unique_id=326038151]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzlePiece2" unique_id=1021714869]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.892633, 0, -11.013214)
-mesh = SubResource("BoxMesh_x6ack")
-
-[node name="PuzzlePieceSol" type="StaticBody3D" parent="PuzzlePiece2/MeshInstance3D" unique_id=655223362]
-script = ExtResource("5_iacmt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzlePiece2/MeshInstance3D/PuzzlePieceSol" unique_id=791712312]
-shape = SubResource("ConcavePolygonShape3D_6ev3c")
-
-[node name="PuzzlePiece3" type="Node3D" parent="." unique_id=351865532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzlePiece3" unique_id=1678091886]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.892633, 0, 0)
-mesh = SubResource("BoxMesh_x6ack")
-
-[node name="PuzzlePieceEstrella" type="StaticBody3D" parent="PuzzlePiece3/MeshInstance3D" unique_id=549480646]
-script = ExtResource("5_iacmt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzlePiece3/MeshInstance3D/PuzzlePieceEstrella" unique_id=180594248]
-shape = SubResource("ConcavePolygonShape3D_6ev3c")
-
-[node name="PuzzlePiece4" type="Node3D" parent="." unique_id=1797742963]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzlePiece4" unique_id=454792032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.892633, 0, 12.543369)
-mesh = SubResource("BoxMesh_x6ack")
-
-[node name="PuzzlePieceLuna" type="StaticBody3D" parent="PuzzlePiece4/MeshInstance3D" unique_id=524185673]
-script = ExtResource("5_iacmt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzlePiece4/MeshInstance3D/PuzzlePieceLuna" unique_id=525386020]
-shape = SubResource("ConcavePolygonShape3D_6ev3c")
 
 [node name="Floor" parent="." unique_id=1373648623 instance=ExtResource("7_maf8m")]
 
