@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bjpyuj5qyo4y4"]
+
+[ext_resource type="Texture2D" uid="uid://s5v6v0dknseo" path="res://Assets/Arte/mascara.png" id="1_n3hwx"]
+[ext_resource type="FontFile" uid="uid://c76cqwyq3ro02" path="res://Assets/Fuentes/Title.ttf" id="2_dqx5i"]
+[ext_resource type="FontFile" uid="uid://bs7khba1lwq07" path="res://Assets/Fuentes/MainFont.ttf" id="3_iqerj"]
+
+[sub_resource type="Theme" id="Theme_8ldow"]
+
+[node name="Fin" type="Control" unique_id=108631347]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2022912348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1476717, 0.14767182, 0.14767179, 1)
+
+[node name="Mascara" type="Sprite2D" parent="." unique_id=571230165]
+position = Vector2(0, 336.00003)
+scale = Vector2(0.26994017, 0.26994017)
+texture = ExtResource("1_n3hwx")
+
+[node name="Mascara2" type="Sprite2D" parent="." unique_id=1635490786]
+position = Vector2(1144, 328)
+scale = Vector2(0.26994017, 0.26994017)
+texture = ExtResource("1_n3hwx")
+
+[node name="Title" type="Label" parent="." unique_id=974228124]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 285.0
+offset_top = 37.0
+offset_right = 854.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme = SubResource("Theme_8ldow")
+theme_override_colors/font_color = Color(0.09411765, 1, 0.9647059, 1)
+theme_override_fonts/font = ExtResource("2_dqx5i")
+theme_override_font_sizes/font_size = 100
+text = "XolosBa'al"
+
+[node name="Instructions" type="Label" parent="." unique_id=1577851644]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 248.0
+offset_right = 870.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_iqerj")
+theme_override_font_sizes/font_size = 30
+text = "Lograste encontrar las piezas para abrir la puerta y salir del templo antes de que Kakasbaaal te devore"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Subtitle" type="Label" parent="." unique_id=1925268559]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 184.0
+offset_right = 901.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(0.09803922, 0.9843137, 0.5372549, 1)
+theme_override_fonts/font = ExtResource("3_iqerj")
+theme_override_font_sizes/font_size = 50
+text = "FIN"
+horizontal_alignment = 1

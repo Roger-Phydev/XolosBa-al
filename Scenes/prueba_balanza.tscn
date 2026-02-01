@@ -58,7 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.753342, 3.2376556, 13.910
 
 [node name="Balanza" parent="." unique_id=1300322833 instance=ExtResource("2_ltfu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.852592, 0, -7.274749)
-peso_izquierda = 10.0
+peso_izquierda = 5.0
 
 [node name="Craneo" type="MeshInstance3D" parent="Balanza" unique_id=1432567671]
 transform = Transform3D(0.8410012, 0.34351242, -0.4179906, 0, 0.7725785, 0.6349193, 0.5410332, -0.5339679, 0.64973944, -1.9224606, -0.36791873, 2.3317022)

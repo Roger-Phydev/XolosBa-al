@@ -3,6 +3,7 @@ extends Node
 var man_active = true; #indicates if the man is active
 var current_scene = null
 var medallones = 0; #cuenta los medallones
+var total_medallones = 2; #total de medallones en el juego
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,7 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if medallones >= total_medallones:
+		goto_scene("res://scenes/fin.tscn");
 
 #toogle active:
 func toogle_char():
