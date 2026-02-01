@@ -3,14 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="1_ch57g"]
 [ext_resource type="Script" uid="uid://b8f72nthr8148" path="res://scripts/sala_de_sonido.gd" id="1_ybxhx"]
 [ext_resource type="PackedScene" uid="uid://ct5ijybxw4cmk" path="res://Scenes/Dog.tscn" id="2_ybxhx"]
-[ext_resource type="PackedScene" path="res://Scenes/floor.tscn" id="3_05mb3"]
+[ext_resource type="PackedScene" uid="uid://ch2aaogqda5on" path="res://Scenes/floor.tscn" id="3_05mb3"]
 [ext_resource type="PackedScene" uid="uid://cahfxy7o2jj1b" path="res://Assets/Modelos/Paredes/paredes_separadas/ParedAlta.fbx" id="4_5t3sd"]
 [ext_resource type="PackedScene" uid="uid://doui66mfa568m" path="res://Assets/Modelos/Clutter/Plantas/Lianas/plant_modular_003.fbx" id="5_ku3fp"]
 [ext_resource type="PackedScene" uid="uid://b1gqkvi1ln1re" path="res://Assets/Modelos/Clutter/Plantas/Grass/grass.glb" id="6_bm2bi"]
 [ext_resource type="ArrayMesh" uid="uid://d3ow3uatsrd7x" path="res://Assets/Modelos/Clutter/Rocas/acor-9710g103-basalt/source/ACOR97.10G103.obj" id="7_xvd0p"]
 [ext_resource type="PackedScene" uid="uid://cca3wujts13xl" path="res://Assets/Modelos/Clutter/Rocas/Rocks/source/Rock0.fbx" id="9_pefmn"]
-[ext_resource type="PackedScene" uid="uid://clpc4y1m5ogo4" path="res://Assets/Modelos/Clutter/Rocas/Rocks/source/Rock3.fbx" id="10_vf0li"]
-[ext_resource type="ArrayMesh" uid="uid://bqgw71ogmvi5q" path="res://Assets/Modelos/Clutter/Vasijas/cantaros-with-two-handles/source/BR234_LowPoly.obj" id="11_ikenv"]
 [ext_resource type="ArrayMesh" uid="uid://kbg3bpow06fb" path="res://Assets/Modelos/Clutter/Huesos/Craneo/Craneo.obj" id="12_b7pga"]
 [ext_resource type="PackedScene" uid="uid://w5fiqt1micnc" path="res://Scenes/puzzle_piece_rojo.tscn" id="13_nvajx"]
 [ext_resource type="PackedScene" uid="uid://b6oubrk515fjr" path="res://Scenes/puzzle_piece_verde.tscn" id="14_cc8fo"]
@@ -18,7 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://c8o657bpws5jg" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Textures/Rock4_Diffuse.png" id="16_ybxhx"]
 [ext_resource type="Material" uid="uid://l0kwa8f5f37f" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Materials/Rock08.tres" id="17_05mb3"]
 [ext_resource type="PackedScene" uid="uid://c4l2qjf7bwquw" path="res://Scenes/medallon.tscn" id="18_5t3sd"]
-[ext_resource type="PackedScene" uid="uid://bbkwkrrdwsspo" path="res://Scenes/portal_nivel.tscn" id="19_ku3fp"]
+[ext_resource type="PackedScene" path="res://Scenes/portal_nivel.tscn" id="19_ku3fp"]
+[ext_resource type="AudioStream" uid="uid://nl2kmt7d3lrf" path="res://Assets/SFX/getting-medal.mp3" id="19_xvd0p"]
+[ext_resource type="AudioStream" uid="uid://dj58pk6bxtpnp" path="res://Assets/Musica/level_1.mp3" id="20_bm2bi"]
+[ext_resource type="AudioStream" uid="uid://cj63pmwl4jtp4" path="res://Assets/SFX/pista_rojo.mp3" id="20_lvrtb"]
+[ext_resource type="AudioStream" uid="uid://wlqcy37l0wh5" path="res://Assets/SFX/pista_azul.mp3" id="21_pefmn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfaiq"]
 size = Vector3(1, 1.2314453, 1.1817017)
@@ -100,6 +102,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -45,
 
 [node name="Dog" parent="." unique_id=948133787 instance=ExtResource("2_ybxhx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -45, 1.618, 5)
+
+[node name="Nivel" type="AudioStreamPlayer" parent="." unique_id=1500257489]
+stream = ExtResource("20_bm2bi")
+
+[node name="Medallon" type="AudioStreamPlayer" parent="." unique_id=1267114956]
+stream = ExtResource("19_xvd0p")
+
+[node name="PistaRoja" type="AudioStreamPlayer" parent="." unique_id=2056840740]
+stream = ExtResource("20_lvrtb")
+
+[node name="PistaAzul" type="AudioStreamPlayer" parent="." unique_id=473162036]
+stream = ExtResource("21_pefmn")
 
 [node name="Floor" parent="." unique_id=1373648623 instance=ExtResource("3_05mb3")]
 
@@ -260,16 +274,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.94881, -0.02272676, 18.99
 [node name="Sketchfab_Scene14" parent="Vegetación" unique_id=120931477 instance=ExtResource("6_bm2bi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.040098, -0.02272676, 31.014511)
 
-[node name="Acor97_10g103" type="MeshInstance3D" parent="Vegetación" unique_id=234111420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.877686, -0.4051957, -3.4397104)
-mesh = ExtResource("7_xvd0p")
-
 [node name="Acor97_10g104" type="MeshInstance3D" parent="Vegetación" unique_id=1178978711]
 transform = Transform3D(0.06427877, 0, 0.07660445, 0, 0.1, 0, -0.07660445, 0, 0.06427877, -10.996754, 0.14167786, -9.027682)
-mesh = ExtResource("7_xvd0p")
-
-[node name="Acor97_10g105" type="MeshInstance3D" parent="Vegetación" unique_id=1769814804]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -23.404873, 0.5375974, -20.82022)
 mesh = ExtResource("7_xvd0p")
 
 [node name="Acor97_10g106" type="MeshInstance3D" parent="Vegetación" unique_id=1462347161]
@@ -301,18 +307,7 @@ transform = Transform3D(0.28284273, 0, 0.28284273, 0, 0.4, 0, -0.28284273, 0, 0.
 [node name="Rock4" parent="Rocks" unique_id=1742525857 instance=ExtResource("9_pefmn")]
 transform = Transform3D(0.28284273, 0, 0.28284273, 0, 0.4, 0, -0.28284273, 0, 0.28284273, 22.945442, -0.059622884, -23.327578)
 
-[node name="Rock6" parent="Rocks" unique_id=749821371 instance=ExtResource("10_vf0li")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.949682, 0.4963951, -33.94707)
-
 [node name="Jarrones" type="Node3D" parent="." unique_id=1928160958]
-
-[node name="Br234LowPoly" type="MeshInstance3D" parent="Jarrones" unique_id=668680779]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.908672, 0.2756272, -13.638075)
-mesh = ExtResource("11_ikenv")
-
-[node name="Br234LowPoly2" type="MeshInstance3D" parent="Jarrones" unique_id=1008485840]
-transform = Transform3D(0.5591929, 0, 0.82903755, 0, 1, 0, -0.82903755, 0, 0.5591929, 24.908672, 0.2756272, -15.177542)
-mesh = ExtResource("11_ikenv")
 
 [node name="Craneo" type="MeshInstance3D" parent="." unique_id=354627026]
 transform = Transform3D(0.17537291, 0.20201889, -0.75394475, 0, 0.77274066, 0.20705524, 0.78054106, -0.04538985, 0.16939722, 25.03887, -0.26654816, 3.3391948)

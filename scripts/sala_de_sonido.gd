@@ -12,6 +12,7 @@ var track_perro; #música que escucha el perro
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var letrero = $Man.find_child("ObjectInfo");
+	$Nivel.play(); #sonido de fondo
 	letrero.visible = true;
 	letrero.text = """Escucha con atención las señales
 	los muertos a veces son más difíciles de escuchar para el hombre
@@ -28,11 +29,13 @@ func _process(delta: float) -> void:
 	else:
 		entregar_medallon(); #en caso de ganar, entrega el medallón
 	if GameMaster.man_active and audio_hombre and $Man.playing_audio:
-		print("Reproduciendo "+track_hombre);
+		track_hombre.play();
+		$Nivel.stop(); #detiene la música del nivel
 		$Man.playing_audio = false;
 	if not GameMaster.man_active and audio_perro and $Dog.playing_audio:
 		$Dog.playing_audio = false;
-		print("Reproduciendo "+track_perro);
+		$Nivel.stop(); #detiene la música del nivel
+		track_perro.play();
 
 #entregar medallón
 func entregar_medallon():
@@ -45,40 +48,46 @@ func _on_area_sonido_body_entered(body: Node3D) -> void:
 	if "Man" in body.get_name():
 		audio_hombre = true;
 		body.playing_audio = true;
-		track_hombre = "Pista Roja";
+		track_hombre = $PistaRoja;
 	elif "Dog" in body.get_name():
 		audio_perro = true;
 		body.playing_audio = true;
-		track_perro = "Pista Roja";
+		track_perro = $PistaRoja;
 
 #
 func _on_area_sonido_body_exited(body: Node3D) -> void:
 	if "Man" in body.get_name():
 		audio_hombre = false;
 		body.playing_audio = false;
-		print("Se dejó de reproducir "+track_hombre);
+		track_hombre.stop(); #pausa sonido
 	elif "Dog" in body.get_name():
 		audio_perro = false;
 		body.playing_audio = false;
-		print("Se dejó de reproducir "+track_perro);
+		track_perro.stop(); #pausa sonido
+	$Nivel.play(); #pone la música de fondo
 
 func _on_area_sonido_perro_body_entered(body: Node3D) -> void:
 	#activa el audio solo en el perro
 	if "Dog" in body.get_name():
 		audio_perro = true;
 		body.playing_audio = true;
-		track_perro = "Pista Azul";
+		track_perro = $PistaAzul;
 
 
 func _on_area_sonido_perro_body_exited(body: Node3D) -> void:
 	if "Dog" in body.get_name():
 		audio_perro = false;
 		body.playing_audio = false;
+		track_perro.stop();
+	$Nivel.play(); #pone la música de fondo
 	
 func toogle_active_char():
 	GameMaster.man_active = not GameMaster.man_active; #toogles state of this variable
 	# then changes the state of active camera whether man is active or not
-	print("Se dejó de reproducir todo");
+	if track_hombre:
+		track_hombre.stop();
+	if track_perro:
+		track_perro.stop();
 	$Man.playing_audio = audio_hombre;
 	$Dog.playing_audio = audio_perro;
 	if GameMaster.man_active:
