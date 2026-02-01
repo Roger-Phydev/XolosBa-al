@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b6oubrk515fjr"]
+
+[ext_resource type="Script" uid="uid://c4jt86h6dcoug" path="res://scripts/puzzle_piece.gd" id="1_dx0xu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bagov"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqdsn"]
+albedo_color = Color(0, 1, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qqox"]
+
+[node name="PuzzlePieceVerde" type="CharacterBody3D" unique_id=667700111]
+script = ExtResource("1_dx0xu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=242003746]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("BoxMesh_bagov")
+surface_material_override/0 = SubResource("StandardMaterial3D_pqdsn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1845842548]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+shape = SubResource("BoxShape3D_3qqox")

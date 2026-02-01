@@ -38,10 +38,10 @@ points = PackedVector3Array(-6, 0, 1, 4, 0, -4, 4, 0, 1, -6, 0, -4)
 script = ExtResource("1_jv6wh")
 
 [node name="Man" parent="." unique_id=362380532 instance=ExtResource("2_6l7je")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.918304, 2.5334618, 27.646711)
+transform = Transform3D(-0.64721566, 0, -0.7623069, 0, 1, 0, 0.7623069, 0, -0.64721566, -0.52937126, 5.8870096, -0.1966412)
 
 [node name="Dog" parent="." unique_id=948133787 instance=ExtResource("1_52fb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.216387, 1.6181571, 29.19144)
+transform = Transform3D(0.7932896, 0, 0.6088445, 0, 1, 0, -0.6088445, 0, 0.7932896, 9.876099, 1.6181571, 12.087254)
 
 [node name="Floor" parent="." unique_id=1373648623 instance=ExtResource("7_maf8m")]
 

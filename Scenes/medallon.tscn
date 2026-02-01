@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c4l2qjf7bwquw"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i7kxh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kupuw"]
+size = Vector3(0.5374756, 0.39698792, 0.4736328)
+
+[node name="Medallon" type="CharacterBody3D" unique_id=872074679]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=895096734]
+transform = Transform3D(0.38302222, -0.03213938, 0, 0.3213938, 0.038302224, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_i7kxh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1201726096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015808105, 0.007621765, 0.0146484375)
+shape = SubResource("BoxShape3D_kupuw")

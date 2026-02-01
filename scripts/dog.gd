@@ -5,6 +5,7 @@ const SPEED = 5.0;
 const JUMP_VELOCITY = 6;
 var mouse_h_sensitivity = 0.05;
 var mouse_v_sensitivity = 0.05;
+var playing_audio = false;
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED; #mousecaptured

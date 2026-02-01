@@ -90,19 +90,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jwmbh")
 [node name="ObjectInfo" type="Label" parent="CameraArm/Camera3D/UI/Labels" unique_id=1689386905]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -11.5
-offset_right = 52.0
-offset_bottom = 11.5
+offset_top = -24.5
+offset_bottom = 24.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 text = "Texto de información"
+horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="ActionInfo" type="Label" parent="CameraArm/Camera3D/UI/Labels" unique_id=500129153]
 visible = false
@@ -130,6 +129,16 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 35
 text = "Moverse: (AWSD/flechas)      Apagar/Encender Antorcha: (T)
 Liberar Mouse: (Esc)   Pausa: (Backspace)"
+horizontal_alignment = 1
+
+[node name="Medallones" type="Label" parent="CameraArm/Camera3D/UI/Labels" unique_id=1860352761]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Medallones : "
 horizontal_alignment = 1
 
 [node name="Area3D" type="Area3D" parent="CameraArm/Camera3D" unique_id=1855654259]
