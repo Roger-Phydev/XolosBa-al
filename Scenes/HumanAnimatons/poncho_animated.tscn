@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c63lrwk6dipsg"]
+
+[ext_resource type="PackedScene" uid="uid://di8sxqiytinlw" path="res://Assets/Modelos/Hombre/Poncho_1FirstTry_1.fbx" id="1_so73x"]
+[ext_resource type="Script" uid="uid://bsobk5tmn64xi" path="res://scripts/poncho_animated.gd" id="2_ee4lu"]
+
+[node name="PonchoAnimated" unique_id=35937515 instance=ExtResource("1_so73x")]
+script = ExtResource("2_ee4lu")
+
+[node name="Skeleton3D" parent="Armature_001" parent_id_path=PackedInt32Array(1718107846) index="0" unique_id=720746301]
+bones/0/rotation = Quaternion(-0.15605593, -0.12483781, -0.15442857, 0.9675815)
+bones/5/rotation = Quaternion(-0.13414265, -0.037714526, -0.24518986, 0.9594089)
+bones/6/rotation = Quaternion(-0.41162637, -0.13959962, 0.15025525, 0.8879747)
+bones/7/rotation = Quaternion(0.107657626, 1.5574946e-07, 0.20729035, 0.9723377)
+bones/8/rotation = Quaternion(0.02668889, -7.4598006e-08, -0.009696617, 0.9995968)
+bones/12/rotation = Quaternion(-0.2859543, 1.382386e-07, 0.17458199, 0.94220555)
+bones/16/rotation = Quaternion(-0.06683719, 0.026995111, 0.28884014, 0.95465994)
+bones/17/rotation = Quaternion(-0.30950743, -0.14902495, 0.1040672, 0.93336314)
+bones/18/rotation = Quaternion(-0.034492247, -0.0047162715, -0.036040664, 0.9987438)
+bones/20/rotation = Quaternion(-0.65759265, 0.08260172, -0.44690305, 0.60085493)
+bones/21/rotation = Quaternion(0.19887157, 5.537076e-09, -0.12712064, 0.97174615)
+bones/22/rotation = Quaternion(-0.06502896, 0.10015524, 0.2821884, 0.9518981)
+bones/23/rotation = Quaternion(0.0029009609, 0.015679747, -0.09702974, 0.9951537)
+bones/24/rotation = Quaternion(-0.080105156, 1.1967794e-07, 0.08890979, 0.9928133)
+bones/27/rotation = Quaternion(0.1397119, 0.049192026, -0.12017542, 0.9816408)
+bones/28/rotation = Quaternion(0.0010521075, -0.01925194, 0.15952401, 0.9870057)
+bones/29/rotation = Quaternion(0.07359612, 0.0100434115, 0.0709042, 0.9947138)
+bones/30/rotation = Quaternion(-0.24383059, 0.031734787, -0.022175174, 0.9690448)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1636438262]
+autoplay = &"Armature_001|IdlePoncho"

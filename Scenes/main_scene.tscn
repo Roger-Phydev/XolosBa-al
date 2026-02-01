@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://7lwn7e5dqwuc" path="res://Scenes/Man.tscn" id="2_6l7je"]
 [ext_resource type="PackedScene" uid="uid://ck0mcyloxhuov" path="res://Assets/Modelos/Test_1.glb" id="4_x6ack"]
 [ext_resource type="Script" uid="uid://c4jt86h6dcoug" path="res://scripts/puzzle_piece.gd" id="5_iacmt"]
-[ext_resource type="PackedScene" uid="uid://b603p1ldmpqsu" path="res://Scenes/estatua.tscn" id="6_6ev3c"]
-[ext_resource type="PackedScene" uid="uid://ch2aaogqda5on" path="res://Scenes/floor.tscn" id="7_maf8m"]
+[ext_resource type="PackedScene" path="res://Scenes/estatua.tscn" id="6_6ev3c"]
+[ext_resource type="PackedScene" path="res://Scenes/floor.tscn" id="7_maf8m"]
 [ext_resource type="PackedScene" uid="uid://cahfxy7o2jj1b" path="res://Assets/Modelos/Paredes/paredes_separadas/ParedAlta.fbx" id="9_mai8y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_x6ack"]

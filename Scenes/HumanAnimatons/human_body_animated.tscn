@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://civx73jyetfo7"]
+
+[ext_resource type="PackedScene" uid="uid://chty5abd0irdq" path="res://Assets/Modelos/Hombre/Body_1irstTry1.fbx" id="1_ng3cw"]
+[ext_resource type="Script" uid="uid://4kxer21d0rxf" path="res://Scenes/HumanAnimatons/human_body_animated.gd" id="2_wc5n7"]
+
+[node name="HumanBodyAnimated" unique_id=566080288 instance=ExtResource("1_ng3cw")]
+script = ExtResource("2_wc5n7")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(309411255) index="0" unique_id=1484782173]
+bones/0/rotation = Quaternion(0.7071067, 8.429367e-08, 8.429366e-08, 0.7071068)
+bones/1/rotation = Quaternion(-3.552712e-15, 3.197442e-14, -4.0498147e-28, 1)
+bones/2/rotation = Quaternion(-3.552712e-15, 0, -4.2914033e-28, 1)
+bones/7/rotation = Quaternion(-0.037622232, 0.027951567, -0.5957127, 0.801829)
+bones/8/rotation = Quaternion(0.06144895, -0.0013806337, 0.04282301, 0.99719024)
+bones/17/rotation = Quaternion(-0.11810589, -0.09797896, 0.7605224, 0.6309174)
+bones/18/rotation = Quaternion(0.18889852, -0.030064445, 0.42717063, 0.88370746)
+bones/19/rotation = Quaternion(0.6832715, 0.104284674, -0.21337199, 0.69046164)
+bones/20/rotation = Quaternion(-0.17987405, 0.020306403, 0.059401646, 0.9816845)
+bones/21/rotation = Quaternion(0.23009329, 0.031439226, 0.28045392, 0.9313508)
+bones/22/rotation = Quaternion(0.21128356, 0.069441594, 0.25524113, 0.94095117)
+bones/24/rotation = Quaternion(0.2912177, -0.2666989, 0.30475283, 0.86671203)
+bones/29/rotation = Quaternion(-0.6859692, 7.587216e-08, 1.1729051e-07, 0.7276306)
+bones/30/rotation = Quaternion(-0.012881605, 0.00035150404, 0.027274327, 0.999545)
+bones/31/rotation = Quaternion(0.00093595, 2.1563811e-07, -0.6981198, 0.7159804)
+bones/34/rotation = Quaternion(-0.6859692, -7.587216e-08, -1.1729051e-07, 0.7276306)
+bones/35/rotation = Quaternion(-0.012881605, -0.00035150404, -0.027274327, 0.999545)
+bones/36/rotation = Quaternion(0.00093595, -2.1563811e-07, 0.6981198, 0.7159804)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1084926891]
+autoplay = &"Armature|IdleBody"
