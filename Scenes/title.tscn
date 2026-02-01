@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://durnrxo8ealj"]
+
+[ext_resource type="Script" uid="uid://bv8vfepbkq7gv" path="res://scripts/title.gd" id="1_w31pl"]
+[ext_resource type="FontFile" uid="uid://c76cqwyq3ro02" path="res://Assets/Fuentes/Title.ttf" id="2_fp2oq"]
+[ext_resource type="Texture2D" uid="uid://s5v6v0dknseo" path="res://Assets/Arte/mascara.png" id="2_q2qps"]
+[ext_resource type="FontFile" uid="uid://bs7khba1lwq07" path="res://Assets/Fuentes/MainFont.ttf" id="3_q2qps"]
+
+[sub_resource type="Theme" id="Theme_w31pl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekrfg"]
+bg_color = Color(0, 0, 0, 0.3137255)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4obfb"]
+border_width_left = 50
+border_width_right = 50
+border_color = Color(0, 0, 0, 0.3137255)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w31pl"]
+bg_color = Color(0.09411765, 1, 0.9647059, 1)
+border_width_left = 50
+border_width_right = 50
+border_color = Color(0, 0, 0, 0.3137255)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Title" type="Control" unique_id=412393431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w31pl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=766149380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1476717, 0.14767182, 0.14767179, 1)
+
+[node name="Mascara" type="Sprite2D" parent="." unique_id=929370323]
+position = Vector2(0, 336.00003)
+scale = Vector2(0.26994017, 0.26994017)
+texture = ExtResource("2_q2qps")
+
+[node name="Mascara2" type="Sprite2D" parent="." unique_id=1752815243]
+position = Vector2(1144, 328)
+scale = Vector2(0.26994017, 0.26994017)
+texture = ExtResource("2_q2qps")
+
+[node name="Title" type="Label" parent="." unique_id=643384265]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 32.0
+offset_right = 289.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme = SubResource("Theme_w31pl")
+theme_override_colors/font_color = Color(0.09411765, 1, 0.9647059, 1)
+theme_override_fonts/font = ExtResource("2_fp2oq")
+theme_override_font_sizes/font_size = 100
+text = "XolosBa'al"
+
+[node name="Instructions" type="Label" parent="." unique_id=582586545]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 248.0
+offset_right = 893.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_q2qps")
+theme_override_font_sizes/font_size = 30
+text = "Mover - wasd/flechas
+Apagar antorcha (solo explorador): T
+Sacar Mouse: Esc
+Pausa: Backspace
+Cambiar de perspectiva: Tab
+Agarrar/Soltar Objeto (solo explorador): P"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="." unique_id=2055689192]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 184.0
+offset_right = 901.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(0.09803922, 0.9843137, 0.5372549, 1)
+theme_override_fonts/font = ExtResource("3_q2qps")
+theme_override_font_sizes/font_size = 50
+text = "Instrucciones"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1175883498]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11800001
+anchor_top = 0.568
+anchor_right = 0.120000005
+anchor_bottom = 0.568
+offset_left = -15.936005
+offset_top = 79.935974
+offset_right = 873.76
+offset_bottom = 223.93597
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekrfg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=602833111]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Jugar" type="Button" parent="Panel/VBoxContainer" unique_id=2011480796]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q2qps")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4obfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w31pl")
+text = "Jugar
+"
+autowrap_trim_flags = 192
+
+[node name="Salir" type="Button" parent="Panel/VBoxContainer" unique_id=1494400713]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_q2qps")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4obfb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w31pl")
+text = "Salir"
+
+[connection signal="button_down" from="Panel/VBoxContainer/Jugar" to="." method="_on_jugar_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_button_down"]
