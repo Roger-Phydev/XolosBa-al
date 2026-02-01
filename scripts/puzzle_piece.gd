@@ -1,5 +1,6 @@
-extends Node3D
+extends CharacterBody3D
 
+var libre = true;# indica si el objeto está libre, osea, no agarrado
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,8 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-#dissapear function
-func dissapear():
-	self.get_parent().get_parent().queue_free();
+	# Add the gravity.
+	if not is_on_floor() and libre: #si no toca el piso y está libre cae
+		velocity += get_gravity() * delta
+	move_and_slide()

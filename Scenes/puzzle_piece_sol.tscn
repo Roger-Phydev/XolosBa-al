@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://w5fiqt1micnc"]
+
+[ext_resource type="Script" uid="uid://c4jt86h6dcoug" path="res://scripts/puzzle_piece.gd" id="1_jcatb"]
+[ext_resource type="Texture2D" uid="uid://dnim5whcb84nw" path="res://Assets/Texturas/sun.jpg" id="2_dqst8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wxh4w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8esht"]
+albedo_texture = ExtResource("2_dqst8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcatb"]
+
+[node name="PuzzlePieceSol" type="CharacterBody3D" unique_id=825366112]
+script = ExtResource("1_jcatb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=236198578]
+mesh = SubResource("BoxMesh_wxh4w")
+surface_material_override/0 = SubResource("StandardMaterial3D_8esht")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=624035921]
+shape = SubResource("BoxShape3D_jcatb")
