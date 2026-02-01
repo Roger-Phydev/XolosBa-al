@@ -12,10 +12,10 @@
 [ext_resource type="ArrayMesh" uid="uid://d3ow3uatsrd7x" path="res://Assets/Modelos/Clutter/Rocas/acor-9710g103-basalt/source/ACOR97.10G103.obj" id="13_ioaeq"]
 [ext_resource type="PackedScene" uid="uid://clpc4y1m5ogo4" path="res://Assets/Modelos/Clutter/Rocas/Rocks/source/Rock3.fbx" id="14_7ewk0"]
 [ext_resource type="PackedScene" uid="uid://bbkwkrrdwsspo" path="res://Scenes/portal_nivel.tscn" id="14_lhp3t"]
+[ext_resource type="PackedScene" uid="uid://bt5j0vkyb7ny3" path="res://Scenes/sala_de_sonido.tscn" id="15_2ebs2"]
 [ext_resource type="ArrayMesh" uid="uid://kbg3bpow06fb" path="res://Assets/Modelos/Clutter/Huesos/Craneo/Craneo.obj" id="15_gnsmo"]
 [ext_resource type="ArrayMesh" uid="uid://bqgw71ogmvi5q" path="res://Assets/Modelos/Clutter/Vasijas/cantaros-with-two-handles/source/BR234_LowPoly.obj" id="15_lhp3t"]
 [ext_resource type="PackedScene" uid="uid://c1nf5njkx6qno" path="res://Scenes/prueba_balanza.tscn" id="15_psl12"]
-[ext_resource type="PackedScene" uid="uid://cg4g6587p2gy1" path="res://Scenes/room_a.tscn" id="16_2ebs2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_huasi"]
 size = Vector3(1, 1.2314453, 1)
@@ -336,7 +336,7 @@ mesh = ExtResource("15_gnsmo")
 
 [node name="PortalSonidos" parent="." unique_id=208923617 instance=ExtResource("14_lhp3t")]
 transform = Transform3D(-0.66650635, 0, 0.7454993, 0, 1, 0, -0.7454993, 0, -0.66650635, -45.35682, 0, 39.80317)
-destino = ExtResource("16_2ebs2")
+destino = ExtResource("15_2ebs2")
 
 [node name="PortalBalanza" parent="." unique_id=1085388353 instance=ExtResource("14_lhp3t")]
 transform = Transform3D(0.6665063, 0, -0.7454994, 0, 1, 0, 0.7454994, 0, 0.6665063, 46.46814, 0, -42.29203)
