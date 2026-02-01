@@ -31,7 +31,8 @@ func goto_scene(path):
 	# The solution is to defer the load to a later time, when
 	# we can be sure that no code from the current scene is running:
 
-	_deferred_goto_scene.call_deferred(path)
+	get_tree().change_scene_to_file(path)
+	#_deferred_goto_scene.call_deferred(path)
 
 
 func _deferred_goto_scene(path):
