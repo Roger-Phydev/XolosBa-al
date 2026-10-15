@@ -3,6 +3,14 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ProjectSettings.load_resource_pack("res://ClutterParedRota.pck")
+	ProjectSettings.load_resource_pack("res://ClutterVasijas.pck")
+	ProjectSettings.load_resource_pack("res://HuesosPlantas.pck")
+	ProjectSettings.load_resource_pack("res://ModelosObjetos.pck")
+	ProjectSettings.load_resource_pack("res://OtherModels.pck")
+	ProjectSettings.load_resource_pack("res://Paredes.pck")
+	ProjectSettings.load_resource_pack("res://Rocas.pck")
+	ProjectSettings.load_resource_pack("res://Videos.pck")
 	$Menu.play();
 
 
