@@ -12,12 +12,16 @@ config_version=5
 
 config/name="XolosBa'al"
 run/main_scene="uid://cianr1c8su0ob"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameMaster="*uid://ctyqce6ivukxw"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor]
 
