@@ -188,7 +188,6 @@ text = "Salir"
 
 [node name="Menu" type="AudioStreamPlayer" parent="." unique_id=985898199]
 stream = ExtResource("5_yosvi")
-volume_db = -20.071
 
 [connection signal="button_down" from="Panel/VBoxContainer/Jugar" to="." method="_on_jugar_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_button_down"]
