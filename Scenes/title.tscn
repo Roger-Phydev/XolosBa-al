@@ -50,14 +50,36 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1476717, 0.14767182, 0.14767179, 1)
 
-[node name="Mascara" type="Sprite2D" parent="." unique_id=929370323]
-position = Vector2(0, 336.00003)
-scale = Vector2(0.26994017, 0.26994017)
+[node name="MascaraIzq" type="Control" parent="." unique_id=1926911743]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 13.0
+offset_right = 40.0
+offset_bottom = 53.0
+grow_vertical = 2
+
+[node name="Mascara" type="Sprite2D" parent="MascaraIzq" unique_id=929370323]
+scale = Vector2(0.20438683, 0.2043868)
 texture = ExtResource("2_q2qps")
 
-[node name="Mascara2" type="Sprite2D" parent="." unique_id=1752815243]
-position = Vector2(1144, 328)
-scale = Vector2(0.26994017, 0.26994017)
+[node name="MascaraDer" type="Control" parent="." unique_id=257411943]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -10.0
+offset_right = 37.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Mascara" type="Sprite2D" parent="MascaraDer" unique_id=713158464]
+scale = Vector2(0.19740771, 0.19740768)
 texture = ExtResource("2_q2qps")
 
 [node name="Title" type="Label" parent="." unique_id=643384265]
@@ -77,11 +99,16 @@ theme_override_font_sizes/font_size = 100
 text = "XolosBa'al"
 
 [node name="Instructions" type="Label" parent="." unique_id=582586545]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 248.0
-offset_right = 893.0
-offset_bottom = 456.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -318.84802
+offset_top = -76.0
+offset_right = 318.15198
+offset_bottom = 132.0
 theme_override_fonts/font = ExtResource("3_q2qps")
 theme_override_font_sizes/font_size = 30
 text = "Mover - wasd/flechas
@@ -93,11 +120,16 @@ Agarrar/Soltar Objeto (solo explorador): P"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="." unique_id=2055689192]
-layout_mode = 0
-offset_left = 264.0
-offset_top = 184.0
-offset_right = 901.0
-offset_bottom = 235.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.5
+anchor_right = 0.50600004
+anchor_bottom = 0.5
+offset_left = -318.91205
+offset_top = -140.0
+offset_right = 318.08795
+offset_bottom = -89.0
 theme_override_colors/font_color = Color(0.09803922, 0.9843137, 0.5372549, 1)
 theme_override_fonts/font = ExtResource("3_q2qps")
 theme_override_font_sizes/font_size = 50
@@ -107,16 +139,14 @@ horizontal_alignment = 1
 [node name="Panel" type="Panel" parent="." unique_id=1175883498]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.11800001
-anchor_top = 0.568
-anchor_right = 0.120000005
-anchor_bottom = 0.568
-offset_left = -15.936005
-offset_top = 79.935974
-offset_right = 873.76
-offset_bottom = 223.93597
-grow_horizontal = 2
-grow_vertical = 0
+anchor_left = 0.5
+anchor_top = 0.97700006
+anchor_right = 0.5
+anchor_bottom = 0.97700006
+offset_left = -278.0
+offset_top = -154.09601
+offset_right = 279.0
+offset_bottom = -26.096008
 theme_override_styles/panel = SubResource("StyleBoxFlat_ekrfg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=602833111]
@@ -130,6 +160,7 @@ offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="Jugar" type="Button" parent="Panel/VBoxContainer" unique_id=2011480796]
 layout_mode = 2
@@ -137,7 +168,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_q2qps")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4obfb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w31pl")
 text = "Jugar
@@ -150,13 +181,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_q2qps")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4obfb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w31pl")
 text = "Salir"
 
 [node name="Menu" type="AudioStreamPlayer" parent="." unique_id=985898199]
 stream = ExtResource("5_yosvi")
+volume_db = -20.071
 
 [connection signal="button_down" from="Panel/VBoxContainer/Jugar" to="." method="_on_jugar_button_down"]
 [connection signal="button_down" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_button_down"]
