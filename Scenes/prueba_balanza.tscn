@@ -25,11 +25,11 @@
 [ext_resource type="PackedScene" uid="uid://b1gqkvi1ln1re" path="res://Assets/Modelos/Clutter/Plantas/Grass/grass.glb" id="24_ag5qq"]
 [ext_resource type="ArrayMesh" uid="uid://bqgw71ogmvi5q" path="res://Assets/Modelos/Clutter/Vasijas/cantaros-with-two-handles/source/BR234_LowPoly.obj" id="24_c3sfg"]
 [ext_resource type="ArrayMesh" uid="uid://kbg3bpow06fb" path="res://Assets/Modelos/Clutter/Huesos/Craneo/Craneo.obj" id="25_c3sfg"]
-[ext_resource type="PackedScene" path="res://Scenes/portal_nivel.tscn" id="26_ksets"]
+[ext_resource type="PackedScene" uid="uid://bbkwkrrdwsspo" path="res://Scenes/portal_nivel.tscn" id="26_ksets"]
 [ext_resource type="Texture2D" uid="uid://c8o657bpws5jg" path="res://Assets/Modelos/Clutter/Rocas/Rocks/Textures/Rock4_Diffuse.png" id="27_espgj"]
-[ext_resource type="Script" path="res://scripts/premio_balanza.gd" id="27_wn1vb"]
+[ext_resource type="Script" uid="uid://cl5ju2xisi1b0" path="res://scripts/premio_balanza.gd" id="27_wn1vb"]
 [ext_resource type="PackedScene" uid="uid://c4l2qjf7bwquw" path="res://Scenes/medallon.tscn" id="28_wn1vb"]
-[ext_resource type="AudioStream" path="res://Assets/Musica/level_1.mp3" id="30_x26fw"]
+[ext_resource type="AudioStream" uid="uid://dj58pk6bxtpnp" path="res://Assets/Musica/level_1.mp3" id="30_x26fw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hdbn8"]
 size = Vector3(1.46, 2.075, 1.16)

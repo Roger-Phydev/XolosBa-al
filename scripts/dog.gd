@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				start_idle.emit();
 		if Input.is_action_just_pressed("Pause"): #pause mode
-			toogle_mouse_mode(); #toogles mouse mode
 			get_tree().paused = not get_tree().paused; #toogles paused of the menu
 			$CameraArm/Camera3D/PauseMenu.visible = not $CameraArm/Camera3D/PauseMenu.visible; #toogles visibility of the menu
 
@@ -62,6 +61,8 @@ func toogle_mouse_mode():
 
 #mouse rotations:
 func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 	if not GameMaster.man_active and event is InputEventMouseMotion: #if its active dog and mouse moves
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: #if mouse is captured
 			rotate_y(deg_to_rad(-event.relative.x * mouse_h_sensitivity)); #rotates the horizontal axis

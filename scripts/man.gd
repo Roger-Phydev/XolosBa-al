@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	if GameMaster.man_active:
 		# escape mouse_captured
 		if Input.is_action_just_pressed("Cancel") and not get_tree().paused:
@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, SPEED);
 			start_human_idle.emit();
 		if Input.is_action_just_pressed("Pause"): #pause mode
-			toogle_mouse_mode(); #toogles mouse mode
 			get_tree().paused = not get_tree().paused; #toogles paused of the menu
 			$CameraArm/Camera3D/UI/PauseMenu.visible = not $CameraArm/Camera3D/UI/PauseMenu.visible; #toogles visibility of the menu
 		if Input.is_action_just_pressed("Torch"):
@@ -61,9 +60,9 @@ func _physics_process(delta: float) -> void:
 					self.get_parent().add_child(objeto_al_alcance); #lo añade a la escena
 					objeto_al_alcance.position = posicion_global_objeto; #recoloca la misma posición
 					objeto_al_alcance = null; #vacía el objeto
-					
+
 		sostener_objeto(); #en todo momento sostiene el objeto
-					
+
 
 	move_and_slide()
 
@@ -84,6 +83,8 @@ func toogle_mouse_mode():
 
 #mouse rotations:
 func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;
 	if GameMaster.man_active and event is InputEventMouseMotion:# if its active and mouse moves
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED: #if the mouse is captured
 			rotate_y(deg_to_rad(-event.relative.x * mouse_h_sensitivity)); #rotates the horizontal axis
@@ -115,10 +116,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void: #object getting into man's 
 		var letrero = $"CameraArm/Camera3D/UI/Labels/ObjectInfo"; #tomamos esta etiqueta
 		letrero.visible = true; #lo mostramos
 		letrero.text = "Medallón conseguido" # imprimimos esto
-		GameMaster.medallones += 1; #aumenta la cantidad de medallones 
+		GameMaster.medallones += 1; #aumenta la cantidad de medallones
 		await get_tree().create_timer(2).timeout; #espera 2segundos
 		letrero.visible = false; #oculta el label
-		
+
 
 #cuando sale del area de alcance
 
